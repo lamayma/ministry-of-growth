@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ministry of Growth — официальный портал мониторинга ботанических объектов стратегического значения.">
+  <title>Ministry of Growth — Официальный портал наблюдения</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <div class="nav-brand">
+        <svg class="nav-emblem" viewBox="0 0 32 32" fill="none">
+          <rect x="1" y="1" width="30" height="30" stroke="currentColor" stroke-width="1"/>
+          <rect x="5" y="5" width="22" height="22" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+          <line x1="16" y1="1" x2="16" y2="31" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+          <line x1="1" y1="16" x2="31" y2="16" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+          <circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1"/>
+          <circle cx="16" cy="16" r="1" fill="currentColor"/>
+        </svg>
+        <div class="nav-brand-text">
+          <span class="nav-title">Ministry of Growth</span>
+          <span class="nav-dept">Bureau of International Botanical Security — Russian Sector</span>
+        </div>
+      </div>
+      <div class="nav-right">
+        <div class="nav-op-badge">OPERATION <span class="op-name">GREENWATCH</span></div>
+        <div class="nav-status-wrap">
+          <span class="pulse-dot"></span>
+          <span class="nav-status-label">МОНИТОРИНГ АКТИВЕН</span>
+        </div>
+        <nav class="nav-links">
+          <a href="#about">Досье</a>
+          <a href="#dashboard">Данные</a>
+          <a href="#archive">Архив</a>
+          <a href="#register" class="nav-cta">Регистрация</a>
+        </nav>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════ HERO ══ -->
+    <section class="hero" id="hero">
+
+      <!-- Carousel -->
+      <div class="hero-carousel" id="hero-carousel">
+        <div class="carousel-slide active"
+             data-obj="041" data-status="СТАБИЛЕН" data-codename="DRAGON" data-class="B"
+             style="background-image:url('assets/plant-4.jpg')"></div>
+        <div class="carousel-slide"
+             data-obj="042" data-status="МОНИТОРИНГ" data-codename="MOTH" data-class="A"
+             style="background-image:url('assets/plant-1.jpg')"></div>
+        <div class="carousel-slide"
+             data-obj="043" data-status="СТАБИЛЕН" data-codename="JADE" data-class="B"
+             style="background-image:url('assets/plant-2.jpg')"></div>
+        <div class="carousel-slide"
+             data-obj="044" data-status="ПОД НАБЛЮДЕНИЕМ" data-codename="BINARY" data-class="C"
+             style="background-image:url('assets/plant-3.jpg')"></div>
+      </div>
+
+      <div class="hero-overlay"></div>
+      <div class="hero-scanlines"></div>
+
+      <!-- HUD -->
+      <div class="hud">
+        <div class="hud-corner hud-tl"></div>
+        <div class="hud-corner hud-tr"></div>
+        <div class="hud-corner hud-bl"></div>
+        <div class="hud-corner hud-br"></div>
+
+        <!-- Top bar -->
+        <div class="hud-topbar">
+          <div class="hud-left-group">
+            <div class="hud-feed-badge">
+              <span class="hud-live-dot"></span>
+              <span>LIVE FEED — Объект № <span id="hud-obj-num">041</span></span>
+            </div>
+            <div class="hud-codename">CODENAME: «<span id="hud-codename">DRAGON</span>» / CLASS <span id="hud-class">B</span></div>
+          </div>
+          <div class="hud-topbar-right">
+            <span class="hud-label">REC</span>
+            <span class="hud-clock" id="hud-clock">--:--:-- UTC</span>
+          </div>
+        </div>
+
+        <!-- Center content -->
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="label-chip">TOP SECRET // BOTANICA // NOFORN</span>
+            <span class="label-chip">Операция GREENWATCH</span>
+            <span class="label-chip">REF: MOG-RUS-2014</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-title-min">Ministry</span>
+            <span class="hero-title-of">of</span>
+            <span class="hero-title-growth">Growth</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Официальный портал мониторинга ботанических объектов<br class="desktop-br">
+            стратегического значения на территории Российской Федерации
+          </p>
+
+          <div class="hero-chips">
+            <div class="status-chip status-stable">
+              <span class="pulse-dot"></span>
+              Объект № <span id="hero-obj-num">041</span> — <span id="hero-obj-status">СТАБИЛЕН</span>
+            </div>
+            <div class="status-chip">
+              CODENAME: «<span id="hero-obj-codename">DRAGON</span>»
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#register" class="btn btn-primary">Зарегистрироваться как наблюдатель</a>
+            <a href="#report" class="btn btn-outline">Сообщить о новом листе</a>
+          </div>
+
+          <!-- Carousel dots -->
+          <div class="carousel-dots">
+            <button class="carousel-dot active" data-slide="0" aria-label="Объект 041"></button>
+            <button class="carousel-dot" data-slide="1" aria-label="Объект 042"></button>
+            <button class="carousel-dot" data-slide="2" aria-label="Объект 043"></button>
+            <button class="carousel-dot" data-slide="3" aria-label="Объект 044"></button>
+          </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="hud-bottombar">
+          <span>Наблюдение ведётся с 14&nbsp;марта&nbsp;2014&nbsp;г.</span>
+          <span class="hud-sep">|</span>
+          <span>Сессия аутентифицирована</span>
+          <span class="hud-sep">|</span>
+          <span>Наблюдателей в сети: <span id="observer-count" class="mono">1</span></span>
+          <span class="hud-sep">|</span>
+          <span>CLEARANCE LEVEL&nbsp;3</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ ABOUT ══ -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label-wrap">
+            <span class="section-label">Section 01</span>
+            <span class="section-label">CLASSIFIED // BOTANICA</span>
+            <span class="section-label">Дело № MOG-RUS-2014 / Публичный уровень</span>
+          </div>
+          <h2 class="section-title">Досье объектов</h2>
+          <p class="section-intro">
+            Следующие записи составляют официальную документацию ботанических активов,
+            находящихся под непрерывным наблюдением Бюро международной ботанической безопасности
+            в рамках Операции GREENWATCH. Доступ к материалам предоставляется гражданским
+            наблюдателям уровня 3 и выше. Несанкционированное распространение нежелательно, но
+            юридически не преследуется в большинстве юрисдикций.
+          </p>
+        </div>
+
+        <!-- Tab nav -->
+        <div class="tab-nav" id="profile-tabs">
+          <button class="tab-btn active" data-tab="041">№&thinsp;041 «DRAGON»</button>
+          <button class="tab-btn" data-tab="042">№&thinsp;042 «MOTH»</button>
+          <button class="tab-btn" data-tab="043">№&thinsp;043 «JADE»</button>
+          <button class="tab-btn" data-tab="044">№&thinsp;044 «BINARY»</button>
+        </div>
+
+        <!-- ── OBJECT 041 ── -->
+        <div class="tab-panel active" id="tab-041">
+          <div class="about-grid">
+            <div class="about-image-col">
+              <div class="object-image-frame">
+                <img src="assets/plant-4.jpg" alt="Объект № 041 — Dracaena marginata" class="object-image">
+                <div class="object-image-overlay">
+                  <span class="mono small">OBJ-041 / DRAGON / FEED-04</span>
+                  <span class="pulse-dot"></span>
+                </div>
+              </div>
+              <div class="object-threat-wrap">
+                <div class="threat-label">Уровень угрозы</div>
+                <div class="threat-bar-wrap">
+                  <div class="threat-bar"><span class="threat-bar-fill threat-low" style="width:15%"></span></div>
+                  <span class="threat-value mono">LOW</span>
+                </div>
+                <div class="threat-desc">Активных ботанических инцидентов не выявлено. Действуют стандартные протоколы.</div>
+              </div>
+            </div>
+            <div class="about-data-col">
+              <div class="data-table">
+                <div class="data-row"><span class="data-key">Обозначение объекта</span><span class="data-val"><em>Dracaena marginata</em> — Драконово дерево</span></div>
+                <div class="data-row"><span class="data-key">Регистрационный №</span><span class="data-val mono">BOT-2014-041-B</span></div>
+                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Жилой объект, координаты установлены</span></div>
+                <div class="data-row"><span class="data-key">Дата постановки на учёт</span><span class="data-val mono">14.03.2014</span></div>
+                <div class="data-row"><span class="data-key">Класс роста</span><span class="data-val">Прогрессивный — Категория III</span></div>
+                <div class="data-row highlight"><span class="data-key">Уровень устойчивости</span><span class="data-val"><span class="badge badge-green">ИСКЛЮЧИТЕЛЬНЫЙ</span><span class="data-note">верифицировано независимо</span></span></div>
+                <div class="data-row"><span class="data-key">Индекс потребления воды</span><span class="data-val mono">3.2 / 10.0 — Умеренный</span></div>
+                <div class="data-row"><span class="data-key">Индекс молчания</span><span class="data-val mono">10.0 / 10.0 — Максимальный</span></div>
+                <div class="data-row"><span class="data-key">Оценка эстетического вклада</span><span class="data-val mono">8.4 / 10.0</span></div>
+                <div class="data-row"><span class="data-key">Фоторецептивная поверхность</span><span class="data-val"><span class="badge badge-amber">ЗАСЕКРЕЧЕНО</span></span></div>
+                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">Пассивный. Неподвижный. Безмолвный.</span></div>
+                <div class="data-row"><span class="data-key">Уровень доступа</span><span class="data-val"><span class="badge badge-default">ОТКРЫТЫЙ — Публичный уровень</span></span></div>
+              </div>
+              <p class="data-footnote">¹ Все показатели зафиксированы при стандартных условиях (19–22°C, влажность 35–55%). Бюро не несёт ответственности за аномалии, произошедшие вне зарегистрированных часов наблюдения. HUMINT-источник: жилец (агентурный псевдоним CARDINAL-2).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── OBJECT 042 ── -->
+        <div class="tab-panel" id="tab-042">
+          <div class="about-grid">
+            <div class="about-image-col">
+              <div class="object-image-frame">
+                <img src="assets/plant-1.jpg" alt="Объект № 042 — Phalaenopsis sp." class="object-image">
+                <div class="object-image-overlay">
+                  <span class="mono small">OBJ-042 / MOTH / FEED-01</span>
+                  <span class="pulse-dot"></span>
+                </div>
+              </div>
+              <div class="object-threat-wrap">
+                <div class="threat-label">Уровень угрозы</div>
+                <div class="threat-bar-wrap">
+                  <div class="threat-bar"><span class="threat-bar-fill threat-low" style="width:25%"></span></div>
+                  <span class="threat-value mono">MODERATE</span>
+                </div>
+                <div class="threat-desc">Прозрачный контейнер предоставляет несанкционированный обзор корневой системы. Цветонос в неактивном состоянии — возможен разведывательный режим.</div>
+              </div>
+            </div>
+            <div class="about-data-col">
+              <div class="data-table">
+                <div class="data-row"><span class="data-key">Обозначение объекта</span><span class="data-val"><em>Phalaenopsis sp.</em> — Орхидея-мотылёк</span></div>
+                <div class="data-row"><span class="data-key">Регистрационный №</span><span class="data-val mono">BOT-2021-042-A</span></div>
+                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Подоконник, юго-западная экспозиция</span></div>
+                <div class="data-row"><span class="data-key">Дата постановки на учёт</span><span class="data-val mono">07.11.2021</span></div>
+                <div class="data-row"><span class="data-key">Класс роста</span><span class="data-val">Циклический — ожидание реактивации</span></div>
+                <div class="data-row highlight"><span class="data-key">Уровень устойчивости</span><span class="data-val"><span class="badge badge-amber">УМЕРЕННЫЙ</span><span class="data-note">корневая система под контролем</span></span></div>
+                <div class="data-row"><span class="data-key">Тип контейнера</span><span class="data-val mono">Прозрачный — обеспечивает обзор корней ✓</span></div>
+                <div class="data-row"><span class="data-key">Статус цветоноса</span><span class="data-val"><span class="badge badge-amber">НЕАКТИВЕН</span><span class="data-note">сезонный / подозрительный</span></span></div>
+                <div class="data-row"><span class="data-key">Внешние корни</span><span class="data-val mono">2 ед. — зафиксированы, свисающие</span></div>
+                <div class="data-row"><span class="data-key">Индекс молчания</span><span class="data-val mono">10.0 / 10.0 — Максимальный</span></div>
+                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">Временно пассивна. Реактивация возможна в сезон цветения.</span></div>
+                <div class="data-row"><span class="data-key">Уровень доступа</span><span class="data-val"><span class="badge badge-amber">CONFIDENTIAL — Уровень 2</span></span></div>
+              </div>
+              <p class="data-footnote">¹ Прозрачный контейнер интерпретируется как проявление прозрачности перед наблюдателями. Однако возможна двойная интерпретация. Расследование открыто. Ref: INC-2023-042-ROOT. SIGINT-данные: аномалий не зафиксировано.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── OBJECT 043 ── -->
+        <div class="tab-panel" id="tab-043">
+          <div class="about-grid">
+            <div class="about-image-col">
+              <div class="object-image-frame">
+                <img src="assets/plant-2.jpg" alt="Объект № 043 — Crassula ovata" class="object-image">
+                <div class="object-image-overlay">
+                  <span class="mono small">OBJ-043 / JADE / FEED-02</span>
+                  <span class="pulse-dot"></span>
+                </div>
+              </div>
+              <div class="object-threat-wrap">
+                <div class="threat-label">Уровень угрозы</div>
+                <div class="threat-bar-wrap">
+                  <div class="threat-bar"><span class="threat-bar-fill threat-low" style="width:20%"></span></div>
+                  <span class="threat-value mono">LOW</span>
+                </div>
+                <div class="threat-desc">Один засохший лист в нижнем левом секторе вызвал первоначальные подозрения. Расследование прекращено ввиду отсутствия умысла.</div>
+              </div>
+            </div>
+            <div class="about-data-col">
+              <div class="data-table">
+                <div class="data-row"><span class="data-key">Обозначение объекта</span><span class="data-val"><em>Crassula ovata</em> — Денежное дерево</span></div>
+                <div class="data-row"><span class="data-key">Регистрационный №</span><span class="data-val mono">BOT-2019-043-B</span></div>
+                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Горизонтальная поверхность, зона естественного освещения</span></div>
+                <div class="data-row"><span class="data-key">Дата постановки на учёт</span><span class="data-val mono">03.04.2019</span></div>
+                <div class="data-row"><span class="data-key">Класс роста</span><span class="data-val">Накопительный — медленный, целенаправленный</span></div>
+                <div class="data-row highlight"><span class="data-key">Коэф. накопления влаги</span><span class="data-val"><span class="badge badge-red">9.1 / 10.0 — КРИТИЧЕСКИ ВЫСОКИЙ</span></span></div>
+                <div class="data-row"><span class="data-key">Уровень устойчивости</span><span class="data-val mono">Высокий — резервы влаги подтверждены</span></div>
+                <div class="data-row"><span class="data-key">Засохший лист (н/л)</span><span class="data-val"><span class="badge badge-amber">ЗАФИКСИРОВАН</span><span class="data-note">расследование закрыто</span></span></div>
+                <div class="data-row"><span class="data-key">Индекс молчания</span><span class="data-val mono">10.0 / 10.0 — Максимальный</span></div>
+                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">Пассивна. Возможно, накапливает ресурсы для длительной операции.</span></div>
+                <div class="data-row"><span class="data-key">Уровень доступа</span><span class="data-val"><span class="badge badge-default">ОТКРЫТЫЙ — Публичный уровень</span></span></div>
+              </div>
+              <p class="data-footnote">¹ Необычно высокий коэффициент накопления влаги отмечен как потенциально значимый. Аналитики Бюро расходятся во мнениях. Большинство склоняется к версии о физиологической норме суккулентов. Меньшинство продолжает настаивать. Дебаты продолжаются.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── OBJECT 044 ── -->
+        <div class="tab-panel" id="tab-044">
+          <div class="about-grid">
+            <div class="about-image-col">
+              <div class="object-image-frame">
+                <img src="assets/plant-3.jpg" alt="Объект № 044 — Cactaceae sp." class="object-image">
+                <div class="object-image-overlay">
+                  <span class="mono small">OBJ-044 / BINARY / FEED-03</span>
+                  <span class="pulse-dot"></span>
+                </div>
+              </div>
+              <div class="object-threat-wrap">
+                <div class="threat-label">Уровень угрозы</div>
+                <div class="threat-bar-wrap">
+                  <div class="threat-bar"><span class="threat-bar-fill" style="width:55%; background:var(--amber)"></span></div>
+                  <span class="threat-value mono" style="color:var(--amber-hi)">ELEVATED</span>
+                </div>
+                <div class="threat-desc">Двойная структура объекта интерпретируется как потенциально децентрализованное командование. Наличие шипов подтверждено. Руками не трогать.</div>
+              </div>
+            </div>
+            <div class="about-data-col">
+              <div class="data-table">
+                <div class="data-row"><span class="data-key">Обозначение объекта</span><span class="data-val"><em>Cactaceae sp.</em> — Вид не установлен (двойной)</span></div>
+                <div class="data-row"><span class="data-key">Регистрационный №</span><span class="data-val mono">BOT-2023-044-C</span></div>
+                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Деревянная горизонтальная поверхность (предположительно стол)</span></div>
+                <div class="data-row"><span class="data-key">Дата постановки на учёт</span><span class="data-val mono">15.08.2023</span></div>
+                <div class="data-row"><span class="data-key">Класс роста</span><span class="data-val">Вертикальный — две независимые точки роста</span></div>
+                <div class="data-row highlight"><span class="data-key">Число независимых стволов</span><span class="data-val"><span class="badge badge-red">2 — НЕСТАНДАРТНО</span><span class="data-note">возможна параллельная структура</span></span></div>
+                <div class="data-row"><span class="data-key">Наличие шипов</span><span class="data-val"><span class="badge badge-amber">ПОДТВЕРЖДЕНО</span><span class="data-note">контакт не рекомендован</span></span></div>
+                <div class="data-row"><span class="data-key">Уровень устойчивости</span><span class="data-val mono">Высокий — адаптирован к экстремальным условиям</span></div>
+                <div class="data-row"><span class="data-key">Индекс молчания</span><span class="data-val mono">10.0 / 10.0 — Максимальный</span></div>
+                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">ТРЕБУЕТ НАБЛЮДЕНИЯ. Двойная структура вызывает обоснованные подозрения.</span></div>
+                <div class="data-row"><span class="data-key">Уровень доступа</span><span class="data-val"><span class="badge badge-amber">RESTRICTED — Уровень 2</span></span></div>
+              </div>
+              <p class="data-footnote">¹ Объект был добавлен в реестр после анонимного сообщения о «необычной форме» горшечного растения. После проверки угроза была классифицирована как «ботаническая аномалия умеренного значения». Наблюдение продолжается. Тактильный контакт запрещён до завершения оценки.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ DASHBOARD ══ -->
+    <section class="section dashboard" id="dashboard">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label-wrap">
+            <span class="section-label">Section 02</span>
+            <span class="section-label">Обновление данных каждые 6 часов</span>
+            <span class="section-label">SIGINT / OSINT</span>
+          </div>
+          <h2 class="section-title">Панель мониторинга в реальном времени</h2>
+          <p class="section-intro">
+            Биометрические и экологические показатели, полученные из непрерывных сенсорных данных
+            и сертифицированных наблюдательных отчётов. Все показатели подлежат министерской
+            интерпретации. Значения носят ориентировочный характер и не должны использоваться
+            без официального заключения Бюро. Данные по объекту 044 предоставляются с особой осторожностью.
+          </p>
+        </div>
+
+        <div class="dash-grid">
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Уровень угрозы засухи почвы</span>
+              <span class="metric-badge badge-amber">УМЕРЕННЫЙ</span>
+            </div>
+            <div class="metric-value mono" data-count="47">0<span class="metric-unit">%</span></div>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar"><span class="metric-bar-fill" style="--target:47%;--color:var(--amber)"></span></div>
+            </div>
+            <p class="metric-desc">Уровень влажности почвы в допустимых пределах. Вмешательство не требуется. Мониторинг продолжается в штатном режиме.</p>
+            <div class="metric-footer">
+              <span class="mono small">Последнее чтение: 06:00 UTC</span>
+              <span class="mono small">Sensor: SH-041-A</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Вероятность появления нового листа</span>
+              <span class="metric-badge badge-default">НИЗКАЯ</span>
+            </div>
+            <div class="metric-value mono" data-count="23">0<span class="metric-unit">%</span></div>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar"><span class="metric-bar-fill" style="--target:23%;--color:var(--text-2)"></span></div>
+            </div>
+            <p class="metric-desc">Статистический анализ циклов роста указывает на сниженную вероятность нового листообразования в текущем 7-дневном окне. Применяется сезонная поправка.</p>
+            <div class="metric-footer">
+              <span class="mono small">Model: LEM-v4.1</span>
+              <span class="mono small">Достоверность: 68%</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Коэффициент устойчивости ствола</span>
+              <span class="metric-badge badge-green">ВЫСОКИЙ</span>
+            </div>
+            <div class="metric-value mono" data-count="94">0<span class="metric-unit">.7</span></div>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar"><span class="metric-bar-fill" style="--target:94.7%;--color:var(--accent)"></span></div>
+            </div>
+            <p class="metric-desc">Структурная целостность основного ствола подтверждена. Боковой нестабильности не обнаружено. Объект сохраняет вертикальное положение без внешней опоры с 2019 года.</p>
+            <div class="metric-footer">
+              <span class="mono small">Метод: визуальный + ручной</span>
+              <span class="mono small">REF: TSC-041</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Индекс интерьерной гармонии</span>
+              <span class="metric-badge badge-green">ХОРОШИЙ</span>
+            </div>
+            <div class="metric-value mono" data-count="8">0<span class="metric-unit">.1</span></div>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar"><span class="metric-bar-fill" style="--target:81%;--color:var(--accent)"></span></div>
+            </div>
+            <p class="metric-desc">Объект продолжает положительно влиять на пространственное равновесие помещения. Эстетических инцидентов не зафиксировано. Присутствие оценивается как «успокаивающее» (n=4).</p>
+            <div class="metric-footer">
+              <span class="mono small">Шкала: 0–10</span>
+              <span class="mono small">Панель наблюдателей: n=4</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Оценка уверенности фотосинтеза</span>
+              <span class="metric-badge badge-amber">НОМИНАЛЬНЫЙ</span>
+            </div>
+            <div class="metric-value mono" data-count="76">0<span class="metric-unit">%</span></div>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar"><span class="metric-bar-fill" style="--target:76%;--color:var(--amber)"></span></div>
+            </div>
+            <p class="metric-desc">Эффективность поглощения света в ожидаемом диапазоне. Сезонное отклонение от базовых показателей учтено. Корректирующие действия не санкционированы.</p>
+            <div class="metric-footer">
+              <span class="mono small">Расчётный, не измеренный</span>
+              <span class="mono small">REF: PHT-2026-041</span>
+            </div>
+          </div>
+
+          <div class="metric-card metric-card--status">
+            <div class="metric-header">
+              <span class="metric-label">Общий статус операции</span>
+              <span class="metric-badge badge-green">СТАБИЛЬНО</span>
+            </div>
+            <div class="metric-status-display">
+              <span class="pulse-dot large"></span>
+              <span class="metric-status-word mono">STABLE</span>
+            </div>
+            <p class="metric-desc">Аномальных паттернов роста, поведенческих отклонений или постуральных нарушений не выявлено. Все объекты функционируют в пределах зарегистрированных параметров.</p>
+            <p class="metric-desc">Операция GREENWATCH продолжается согласно протоколу MOG-RUS/CONT.</p>
+            <div class="metric-footer">
+              <span class="mono small">Статус с: 18.02.2025</span>
+              <span class="mono small">Следующий обзор: 30.06.2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-footnote">
+          Все данные собираются, агрегируются и интерпретируются в соответствии с Директивой Бюро BD-BOT-RUS-2019-7.
+          Бюро не гарантирует точность данных автономных датчиков. В случае расхождения приоритет
+          отдаётся оценке невооружённым взглядом сертифицированного наблюдателя.
+          Засекреченные компоненты отчёта доступны по запросу при наличии допуска уровня 4 и выше.
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ ARCHIVE ══ -->
+    <section class="section archive" id="archive">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label-wrap">
+            <span class="section-label">Section 03</span>
+            <span class="section-label">Протокол — Федеральный реестр ботанических событий</span>
+          </div>
+          <h2 class="section-title">Официальный архив наблюдений</h2>
+          <p class="section-intro">
+            Хронологический реестр всех значимых событий, связанных с объектами наблюдения.
+            Записи вносятся сертифицированными наблюдателями и проверяются Бюро в течение
+            30 рабочих дней. Все записи являются постоянными и не могут быть удалены.
+            В отдельных случаях — могут быть частично засекречены.
+          </p>
+        </div>
+
+        <div class="archive-table">
+          <div class="archive-table-header">
+            <span>Дата</span>
+            <span>Объект / Тип</span>
+            <span>Описание события</span>
+            <span>Статус</span>
+          </div>
+
+          <div class="archive-row" data-type="routine">
+            <div class="archive-date mono">22.04.2026</div>
+            <div class="archive-type"><span class="badge badge-default">№041 — Плановая</span></div>
+            <div class="archive-desc">Плановая инспекция завершена. Объект демонстрирует устойчивое состояние. Нового роста не зафиксировано. Условия окружающей среды: облачно, 18°C — признано «приемлемым» по сезонным нормам. Наблюдатель: Household Authority, старший уровень.</div>
+            <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+          </div>
+
+          <div class="archive-row" data-type="hydration">
+            <div class="archive-date mono">18.02.2025</div>
+            <div class="archive-type"><span class="badge badge-default">№041 — Гидратация</span></div>
+            <div class="archive-desc">Событие полива успешно завершено. Параметры гидратации восстановлены до оптимального уровня. Продолжительность: ~45 секунд. Объём: ~300 мл. Впитывание подтверждено через 2 часа. Отклонений не выявлено.</div>
+            <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+          </div>
+
+          <div class="archive-row" data-type="postural">
+            <div class="archive-date mono">07.01.2025</div>
+            <div class="archive-type"><span class="badge badge-amber">№041 — Постуральное</span></div>
+            <div class="archive-desc">Объект зафиксирован в положении с наклоном ~3° в сторону основного источника света. Корректирующий поворот на 45° произведён назначенным ботаническим офицером (гражданский, без регистрации). Постинспекция: удовлетворительно.</div>
+            <div class="archive-status"><span class="badge badge-green">Устранено</span></div>
+          </div>
+
+          <div class="archive-row" data-type="notable">
+            <div class="archive-date mono">12.04.2024</div>
+            <div class="archive-type"><span class="badge badge-green">№041 — Значимое</span></div>
+            <div class="archive-desc">Объект произвёл один (1) новый лист. Событие зарегистрировано и подано в Федеральный реестр значимых ботанических событий в установленный 24-часовой срок. Лист признан здоровым, длина 7 см. Ref: REF-LEAF-2024-041-001.</div>
+            <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+          </div>
+
+          <div class="archive-row" data-type="incident">
+            <div class="archive-date mono">03.11.2023</div>
+            <div class="archive-type"><span class="badge badge-amber">№041 — Эстетический</span></div>
+            <div class="archive-desc">Зафиксировано незначительное снижение визуальной уверенности. Кончик левого нижнего листа обнаруживает потемнение (≈4 мм). Причина не установлена. Под подозрением: воздействие сквозняка или несанкционированный перелив. Дело открыто. INC-2023-011.</div>
+            <div class="archive-status"><span class="badge badge-amber">На рассмотрении</span></div>
+          </div>
+
+          <div class="archive-row" data-type="audit">
+            <div class="archive-date mono">07.11.2021</div>
+            <div class="archive-type"><span class="badge badge-green">№042 — Регистрация</span></div>
+            <div class="archive-desc">Объект №042 «MOTH» официально поставлен на учёт Бюро. Начальные параметры зафиксированы. Прозрачный контейнер отмечен как нестандартный. Статус цветоноса на момент регистрации: активный. Уровень допуска: CONFIDENTIAL.</div>
+            <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+          </div>
+
+          <div class="archive-row" data-type="emergency">
+            <div class="archive-date mono">02.06.2022</div>
+            <div class="archive-type"><span class="badge badge-red">№041 — Экстренное</span></div>
+            <div class="archive-desc">Экстренная гидратация. Уровень засухи почвы достиг критического порога (Уровень 4 — Тяжёлый). Немедленное вмешательство санкционировано. Дефицит влаги: ~500 мл. Время восстановления: 48 ч. Причина: отсутствие наблюдателя на объекте (12 дней, незарегистрировано).</div>
+            <div class="archive-status"><span class="badge badge-green">Устранено</span></div>
+          </div>
+
+          <div class="archive-row" data-type="audit">
+            <div class="archive-date mono">03.04.2019</div>
+            <div class="archive-type"><span class="badge badge-green">№043 — Регистрация</span></div>
+            <div class="archive-desc">Объект №043 «JADE» поставлен на учёт. Необычно высокий коэффициент накопления влаги (9.1/10.0) зафиксирован и передан на аналитическое рассмотрение. Итог рассмотрения: «физиологическая норма суккулента». Наблюдение продолжается.</div>
+            <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+          </div>
+
+          <div class="archive-row" data-type="notable">
+            <div class="archive-date mono">15.08.2023</div>
+            <div class="archive-type"><span class="badge badge-amber">№044 — Регистрация</span></div>
+            <div class="archive-desc">Объект №044 «BINARY» поставлен на учёт после анонимного сообщения о «необычной форме» горшечного растения. Двойная структура ствола классифицирована как «ботаническая аномалия умеренного значения». Тактильный контакт запрещён. Уровень допуска: RESTRICTED.</div>
+            <div class="archive-status"><span class="badge badge-amber">Наблюдение</span></div>
+          </div>
+
+          <div class="archive-row" data-type="historic">
+            <div class="archive-date mono">14.03.2014</div>
+            <div class="archive-type"><span class="badge badge-green">№041 — Исторически значимое</span></div>
+            <div class="archive-desc">Объект №041 официально зарегистрирован. Программа наблюдения инициирована. Классификация: Class B Indoor Botanical Asset. Начальная высота: ~60 см. Состояние на момент приёма: хорошее. Эта запись является основополагающим документом операции GREENWATCH — все последующие записи производны от данного акта.</div>
+            <div class="archive-status"><span class="badge badge-green">Основная запись</span></div>
+          </div>
+        </div>
+
+        <div class="archive-footer">
+          <span class="mono small">Всего событий: 10</span>
+          <span class="mono small">Открытых инцидентов: 1</span>
+          <span class="mono small">Целостность архива: Подтверждена</span>
+          <span class="mono small">Последний экспорт: 22.04.2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ REGISTER ══ -->
+    <section class="section register" id="register">
+      <div class="container">
+        <div class="form-layout">
+          <div class="form-intro">
+            <div class="section-label-wrap">
+              <span class="section-label">Section 04</span>
+              <span class="section-label">Программа гражданского участия</span>
+            </div>
+            <h2 class="section-title">Регистрация гражданского наблюдателя</h2>
+            <p>
+              Зарегистрируйте своё намерение участвовать в национальной программе ботанического
+              мониторинга. Зарегистрированные наблюдатели получают доступ к обновлениям и право
+              подавать официальные наблюдательные отчёты напрямую в архив Бюро.
+            </p>
+            <p>
+              Все заявки проходят стандартную проверку. Регистрация не создаёт юридических обязательств.
+              Бюро оставляет за собой право отклонить заявку без объяснения причин — данное право,
+              однако, ранее никогда не применялось.
+            </p>
+            <div class="form-requirements">
+              <div class="form-req-title">Минимальные требования к наблюдателю</div>
+              <ul class="form-req-list">
+                <li>Способность наблюдать за растением без прямого физического контакта</li>
+                <li>Доступ к естественному или искусственному освещению</li>
+                <li>Готовность подавать отчёты своевременно (в течение 24 часов)</li>
+                <li>Базовое понимание концепции почвы</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="form-wrap">
+            <div class="form-doc-header">
+              <span class="mono small">Form MOG-OBS-01 — Rev. 4</span>
+              <span class="mono small">Issued: 01.01.2020</span>
+            </div>
+            <form class="form" id="register-form" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="reg-name">Полное имя <span class="required">*</span></label>
+                <input class="form-input" type="text" id="reg-name" name="name" placeholder="Как зарегистрировано у властей" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-region">Регион наблюдения <span class="required">*</span></label>
+                <input class="form-input" type="text" id="reg-region" name="region" placeholder="Город, район или номер комнаты" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-class">Классификация наблюдателя</label>
+                <select class="form-input form-select" id="reg-class" name="classification">
+                  <option value="">— Выберите классификацию —</option>
+                  <option value="casual">Рядовой наблюдатель</option>
+                  <option value="dedicated">Преданный монитор</option>
+                  <option value="senior">Старший ботанический дозорный</option>
+                  <option value="honorary">Почётный счётчик листьев</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-readiness">Готовность к мониторингу листвы <span class="required">*</span></label>
+                <select class="form-input form-select" id="reg-readiness" name="readiness" required>
+                  <option value="">— Выберите статус готовности —</option>
+                  <option value="yes">Подтверждена</option>
+                  <option value="review">На личном рассмотрении</option>
+                  <option value="conditional">Условная (уточнить в заявлении)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-dryness">Способность обнаружить подозрительную сухость</label>
+                <select class="form-input form-select" id="reg-dryness" name="dryness">
+                  <option value="">— Выберите уровень компетентности —</option>
+                  <option value="certified">Сертифицировано (кем — не указано)</option>
+                  <option value="self-assessed">Самооценка</option>
+                  <option value="developing">В процессе развития</option>
+                  <option value="no">Не применимо — полагаюсь на расписание</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-hours">Расчётное количество часов наблюдения в неделю</label>
+                <input class="form-input" type="number" id="reg-hours" name="hours" min="0" max="168" placeholder="0.0" step="0.5">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-statement">Заявление о намерениях</label>
+                <textarea class="form-input form-textarea" id="reg-statement" name="statement" placeholder="Опишите в официальных формулировках свою приверженность непрерывному наблюдению за объектами операции GREENWATCH…" rows="5"></textarea>
+              </div>
+              <div class="form-submit-wrap">
+                <button class="btn btn-primary btn-full" type="submit" id="reg-submit">Подать заявление наблюдателя</button>
+                <p class="form-disclaimer">
+                  Подавая данную форму, вы подтверждаете добровольное участие в национальной программе
+                  ботанического мониторинга и берёте на себя обязательство сообщать о значимых
+                  ботанических событиях в течение 24 часов с момента их обнаружения.
+                  Участие является добровольным. Неучастие отмечается.
+                </p>
+              </div>
+            </form>
+            <div class="form-success hidden" id="register-success">
+              <div class="success-icon">✓</div>
+              <div class="success-title mono">Регистрация принята к рассмотрению</div>
+              <p>Ваше заявление подано и будет обработано в течение 30 рабочих дней.
+              Подтверждение по электронной почте не предусмотрено. Ваше имя добавлено в неофициальный реестр.</p>
+              <span class="mono small">Reference: OBS-<span id="success-ref">000000</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ REPORT ══ -->
+    <section class="section report" id="report">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label-wrap">
+            <span class="section-label">Section 05</span>
+            <span class="section-label">Немедленная отчётность</span>
+          </div>
+          <h2 class="section-title">Центр сообщений об инцидентах</h2>
+          <p class="section-intro">
+            Используйте данный раздел для подачи официальных уведомлений о ботанических событиях,
+            требующих немедленного документирования. Все отчёты принимаются Бюро и оцениваются
+            в стандартные сроки. В случае реальной экстренной ситуации — пожалуйста, также
+            рассмотрите возможность полить растение.
+          </p>
+        </div>
+
+        <div class="alert-cards">
+          <div class="alert-card alert-card--green">
+            <div class="alert-card-icon">01</div>
+            <div class="alert-card-body">
+              <div class="alert-card-title">Протокол обнаружения нового листа</div>
+              <p>После визуального подтверждения нового листа наблюдатели обязаны подать официальный отчёт в течение 24 часов. Указать приблизительный размер, положение и эмоциональную реакцию (по желанию, но приветствуется).</p>
+            </div>
+          </div>
+          <div class="alert-card alert-card--amber">
+            <div class="alert-card-icon">02</div>
+            <div class="alert-card-body">
+              <div class="alert-card-title">Процедура эскалации дегидратации</div>
+              <p>При превышении допустимого уровня сухости почвы — немедленно подайте отчёт с указанием степени серьёзности и инициируйте протокол бытового увлажнения. Не ждите санкции Бюро.</p>
+            </div>
+          </div>
+          <div class="alert-card alert-card--red">
+            <div class="alert-card-icon">03</div>
+            <div class="alert-card-body">
+              <div class="alert-card-title">Уведомление о несанкционированном листопаде</div>
+              <p>Любое отделение листа вне утверждённого ухода должно быть задокументировано в течение 6 часов. По возможности — сохраните лист в качестве вещественного доказательства.</p>
+            </div>
+          </div>
+          <div class="alert-card alert-card--default">
+            <div class="alert-card-icon">04</div>
+            <div class="alert-card-body">
+              <div class="alert-card-title">Уведомление об экологическом нарушении</div>
+              <p>Сообщайте о колебаниях температуры, воздействии сквозняка и несанкционированных событиях близости (перестановка мебели) для корректировки экологических базовых показателей.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="report-form-wrap">
+          <div class="form-doc-header">
+            <span class="mono small">Form MOG-INC-03 — Rev. 2</span>
+            <span class="mono small">Для всех уровней наблюдателей</span>
+          </div>
+          <form class="form form-horizontal" id="report-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="inc-type">Тип инцидента <span class="required">*</span></label>
+                <select class="form-input form-select" id="inc-type" name="type" required>
+                  <option value="">— Выберите тип —</option>
+                  <option value="new-leaf">Появление нового листа</option>
+                  <option value="dehydration">Подозрение на дегидратацию</option>
+                  <option value="leaf-drop">Несанкционированное опадание листа</option>
+                  <option value="browning">Потемнение кончика листа</option>
+                  <option value="lean">Постуральное отклонение</option>
+                  <option value="environmental">Экологическое нарушение</option>
+                  <option value="other">Иное (указать ниже)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inc-date">Дата обнаружения <span class="required">*</span></label>
+                <input class="form-input" type="date" id="inc-date" name="date" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Уровень серьёзности <span class="required">*</span></label>
+              <div class="severity-options">
+                <label class="severity-opt"><input type="radio" name="severity" value="low"> <span>Низкий — информационный</span></label>
+                <label class="severity-opt"><input type="radio" name="severity" value="moderate"> <span>Умеренный — требует занесения</span></label>
+                <label class="severity-opt"><input type="radio" name="severity" value="significant"> <span>Значимый — требует действий</span></label>
+                <label class="severity-opt"><input type="radio" name="severity" value="critical"> <span>Критический — немедленная эскалация</span></label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inc-desc">Описание инцидента <span class="required">*</span></label>
+              <textarea class="form-input form-textarea" id="inc-desc" name="description" placeholder="Изложите фактические, объективные сведения о наблюдаемом событии. Избегайте субъективных оценок. По возможности — указывайте размеры." rows="4" required></textarea>
+            </div>
+            <div class="form-submit-wrap">
+              <button class="btn btn-primary" type="submit" id="report-submit">Подать официальный рапорт</button>
+              <span class="mono small">Отчёты не подлежат отзыву после подачи.</span>
+            </div>
+          </form>
+          <div class="form-success hidden" id="report-success">
+            <div class="success-icon">✓</div>
+            <div class="success-title mono">Рапорт об инциденте получен</div>
+            <p>Ваш отчёт занесён в очередь на проверку. Расчётное время обработки: 30 рабочих дней.
+            Вы можете возобновить стандартные наблюдательные мероприятия.</p>
+            <span class="mono small">Incident Ref: INC-<span id="report-ref">000000</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ CTA ══ -->
+    <section class="section cta" id="join">
+      <div class="container">
+        <div class="cta-inner">
+          <div class="cta-label-wrap">
+            <span class="section-label">Section 06</span>
+            <span class="section-label">Национальная ответственность</span>
+            <span class="section-label">OPERATION GREENWATCH</span>
+          </div>
+          <h2 class="cta-title">Растение не станет<br>наблюдать за собой само</h2>
+          <div class="cta-body">
+            <p>
+              Документирование ботанического развития — не тривиальная задача. Объекты под
+              наблюдением Бюро представляют собой живую летопись устойчивого роста, адаптации
+              и экологического взаимодействия. Их непрерывное наблюдение — одновременно
+              научное обязательство и гражданский долг.
+            </p>
+            <p>
+              Бюро международной ботанической безопасности приглашает всех правомочных граждан
+              внести вклад в национальный ботанический реестр. Ваши наблюдения — сколь бы рутинными
+              они ни казались — составляют данные. Данные составляют документацию. Документация
+              составляет историю. А история, как твёрдо убеждено Бюро, начинается с того, что
+              кто-то заметил: растение выросло.
+            </p>
+            <p class="cta-directive">
+              Зарегистрируйтесь. Наблюдайте. Докладывайте. Не поливайте сверх нормы.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="#register" class="btn btn-primary btn-large">Начать регистрацию</a>
+            <a href="#dashboard" class="btn btn-outline btn-large">Перейти к панели данных</a>
+          </div>
+          <div class="cta-stats">
+            <div class="cta-stat">
+              <span class="cta-stat-num mono">12</span>
+              <span class="cta-stat-label">Лет непрерывного наблюдения</span>
+            </div>
+            <div class="cta-stat">
+              <span class="cta-stat-num mono">4</span>
+              <span class="cta-stat-label">Объекта под мониторингом</span>
+            </div>
+            <div class="cta-stat">
+              <span class="cta-stat-num mono">10</span>
+              <span class="cta-stat-label">Событий в официальном архиве</span>
+            </div>
+            <div class="cta-stat">
+              <span class="cta-stat-num mono">∞</span>
+              <span class="cta-stat-label">Расчётное количество листьев</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <svg class="nav-emblem footer-emblem" viewBox="0 0 32 32" fill="none">
+            <rect x="1" y="1" width="30" height="30" stroke="currentColor" stroke-width="1"/>
+            <rect x="5" y="5" width="22" height="22" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+            <line x1="16" y1="1" x2="16" y2="31" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+            <line x1="1" y1="16" x2="31" y2="16" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1"/>
+            <circle cx="16" cy="16" r="1" fill="currentColor"/>
+          </svg>
+          <div>
+            <div class="footer-brand-name">Ministry of Growth</div>
+            <div class="footer-brand-dept">Bureau of International Botanical Security</div>
+            <div class="footer-brand-dept" style="margin-top:2px">Российский сектор / Russian Sector</div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Навигация</div>
+          <a href="#about">Досье объектов</a>
+          <a href="#dashboard">Панель мониторинга</a>
+          <a href="#archive">Архив наблюдений</a>
+          <a href="#register">Регистрация наблюдателя</a>
+          <a href="#report">Сообщить об инциденте</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Документы</div>
+          <a href="#">Директива BD-BOT-RUS-2019-7</a>
+          <a href="#">Кодекс поведения наблюдателя</a>
+          <a href="#">Протокол экстренного полива</a>
+          <a href="#">Политика свободы информации</a>
+          <a href="#">Конфиденциальность (не обязательная)</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Контакт</div>
+          <span class="footer-meta">Запросы принимаются только в письменной форме</span>
+          <span class="footer-meta">Срок ответа: 30–90 рабочих дней</span>
+          <span class="footer-meta">Телефонная линия отсутствует</span>
+          <span class="footer-meta">Личный приём не предусмотрен</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="mono small">© 2014–2026 Ministry of Growth / Bureau of International Botanical Security</span>
+        <span class="mono small">Document No. MOG-WEB-001-RUS / Public Access Tier</span>
+        <span class="mono small">Данные предоставляются исключительно в целях наблюдения.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
