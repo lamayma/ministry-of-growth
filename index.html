@@ -40,6 +40,7 @@
           <a href="#dashboard">Данные</a>
           <a href="#archive">Архив</a>
           <a href="#register" class="nav-cta">Регистрация</a>
+          <a href="submit.html" class="nav-cta nav-cta--gold">Подать объект</a>
         </nav>
       </div>
     </div>
@@ -53,17 +54,17 @@
       <!-- Carousel -->
       <div class="hero-carousel" id="hero-carousel">
         <div class="carousel-slide active"
-             data-obj="041" data-status="СТАБИЛЕН" data-codename="DRAGON" data-class="B"
-             style="background-image:url('assets/plant-4.jpg')"></div>
+             data-obj="041" data-status="ВНИМАНИЕ: КОНЧИКИ" data-codename="DRAGON" data-class="B"
+             style="background-image:url('assets/plant-4.png')"></div>
         <div class="carousel-slide"
-             data-obj="042" data-status="МОНИТОРИНГ" data-codename="MOTH" data-class="A"
-             style="background-image:url('assets/plant-1.jpg')"></div>
+             data-obj="042" data-status="ПОДОЗР. ПЕРЕПОЛИВ" data-codename="MOTH" data-class="A"
+             style="background-image:url('assets/plant-1.png')"></div>
         <div class="carousel-slide"
-             data-obj="043" data-status="СТАБИЛЕН" data-codename="JADE" data-class="B"
-             style="background-image:url('assets/plant-2.jpg')"></div>
+             data-obj="043" data-status="ТРЕВОГА: ПОДДОН" data-codename="JADE" data-class="B"
+             style="background-image:url('assets/plant-2.png')"></div>
         <div class="carousel-slide"
-             data-obj="044" data-status="ПОД НАБЛЮДЕНИЕМ" data-codename="BINARY" data-class="C"
-             style="background-image:url('assets/plant-3.jpg')"></div>
+             data-obj="044" data-status="СТАБИЛЕН" data-codename="BINARY" data-class="C"
+             style="background-image:url('assets/plant-3.png')"></div>
       </div>
 
       <div class="hero-overlay"></div>
@@ -179,7 +180,7 @@
           <div class="about-grid">
             <div class="about-image-col">
               <div class="object-image-frame">
-                <img src="assets/plant-4.jpg" alt="Объект № 041 — Dracaena marginata" class="object-image">
+                <img src="assets/plant-4.png" alt="Объект № 041 — Dracaena marginata" class="object-image">
                 <div class="object-image-overlay">
                   <span class="mono small">OBJ-041 / DRAGON / FEED-04</span>
                   <span class="pulse-dot"></span>
@@ -188,28 +189,37 @@
               <div class="object-threat-wrap">
                 <div class="threat-label">Уровень угрозы</div>
                 <div class="threat-bar-wrap">
-                  <div class="threat-bar"><span class="threat-bar-fill threat-low" style="width:15%"></span></div>
-                  <span class="threat-value mono">LOW</span>
+                  <div class="threat-bar"><span class="threat-bar-fill threat-low" style="width:30%"></span></div>
+                  <span class="threat-value mono" style="color:var(--amber-hi)">MODERATE</span>
                 </div>
-                <div class="threat-desc">Активных ботанических инцидентов не выявлено. Действуют стандартные протоколы.</div>
+                <div class="threat-desc">⚠ Визуальный анализ зафиксировал потемнение кончиков листьев на нескольких фрондах. Предположительная причина: фторид в водопроводной воде или пониженная влажность воздуха. Рекомендована фильтрованная вода.</div>
+              </div>
+              <div class="analysis-box">
+                <div class="analysis-title">FIELD ANALYSIS — 29.04.2026</div>
+                <div class="analysis-row"><span class="analysis-icon warn">!</span><span>Коричневые кончики листьев: <strong>подтверждено</strong> на ≥5 фрондах</span></div>
+                <div class="analysis-row"><span class="analysis-icon ok">✓</span><span>Тургор листа: нормальный — обезвоживания нет</span></div>
+                <div class="analysis-row"><span class="analysis-icon ok">✓</span><span>Цвет ствола: здоровый, структурная целостность сохранена</span></div>
+                <div class="analysis-row"><span class="analysis-icon ok">✓</span><span>Почвенный субстрат: визуально достаточно увлажнён</span></div>
+                <div class="analysis-row"><span class="analysis-icon warn">!</span><span>Рекомендация: перейти на отстоянную или фильтрованную воду</span></div>
               </div>
             </div>
             <div class="about-data-col">
               <div class="data-table">
                 <div class="data-row"><span class="data-key">Обозначение объекта</span><span class="data-val"><em>Dracaena marginata</em> — Драконово дерево</span></div>
                 <div class="data-row"><span class="data-key">Регистрационный №</span><span class="data-val mono">BOT-2014-041-B</span></div>
-                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Жилой объект, координаты установлены</span></div>
+                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Жилой объект, круглый стол, координаты установлены</span></div>
                 <div class="data-row"><span class="data-key">Дата постановки на учёт</span><span class="data-val mono">14.03.2014</span></div>
                 <div class="data-row"><span class="data-key">Класс роста</span><span class="data-val">Прогрессивный — Категория III</span></div>
                 <div class="data-row highlight"><span class="data-key">Уровень устойчивости</span><span class="data-val"><span class="badge badge-green">ИСКЛЮЧИТЕЛЬНЫЙ</span><span class="data-note">верифицировано независимо</span></span></div>
                 <div class="data-row"><span class="data-key">Индекс потребления воды</span><span class="data-val mono">3.2 / 10.0 — Умеренный</span></div>
+                <div class="data-row highlight"><span class="data-key">Состояние кончиков листьев</span><span class="data-val"><span class="badge badge-amber">ПОТЕМНЕНИЕ</span><span class="data-note">фторид / низкая влажность</span></span></div>
                 <div class="data-row"><span class="data-key">Индекс молчания</span><span class="data-val mono">10.0 / 10.0 — Максимальный</span></div>
                 <div class="data-row"><span class="data-key">Оценка эстетического вклада</span><span class="data-val mono">8.4 / 10.0</span></div>
-                <div class="data-row"><span class="data-key">Фоторецептивная поверхность</span><span class="data-val"><span class="badge badge-amber">ЗАСЕКРЕЧЕНО</span></span></div>
-                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">Пассивный. Неподвижный. Безмолвный.</span></div>
+                <div class="data-row"><span class="data-key">Рекомендуемая вода</span><span class="data-val">Фильтрованная или отстоянная 24ч — НЕ водопроводная</span></div>
+                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">Пассивный. Неподвижный. Безмолвный. Чувствителен к фториду.</span></div>
                 <div class="data-row"><span class="data-key">Уровень доступа</span><span class="data-val"><span class="badge badge-default">ОТКРЫТЫЙ — Публичный уровень</span></span></div>
               </div>
-              <p class="data-footnote">¹ Все показатели зафиксированы при стандартных условиях (19–22°C, влажность 35–55%). Бюро не несёт ответственности за аномалии, произошедшие вне зарегистрированных часов наблюдения. HUMINT-источник: жилец (агентурный псевдоним CARDINAL-2).</p>
+              <p class="data-footnote">¹ Визуальный анализ от 29.04.2026: коричневые кончики листьев характерны для чувствительности Dracaena marginata к фториду и хлору водопроводной воды, а также к пониженной влажности воздуха (&lt;40%). Немедленной угрозы жизнедеятельности нет. HUMINT-источник: CARDINAL-2.</p>
             </div>
           </div>
         </div>
@@ -219,88 +229,9 @@
           <div class="about-grid">
             <div class="about-image-col">
               <div class="object-image-frame">
-                <img src="assets/plant-1.jpg" alt="Объект № 042 — Phalaenopsis sp." class="object-image">
+                <img src="assets/plant-1.png" alt="Объект № 042 — Phalaenopsis sp." class="object-image">
                 <div class="object-image-overlay">
                   <span class="mono small">OBJ-042 / MOTH / FEED-01</span>
-                  <span class="pulse-dot"></span>
-                </div>
-              </div>
-              <div class="object-threat-wrap">
-                <div class="threat-label">Уровень угрозы</div>
-                <div class="threat-bar-wrap">
-                  <div class="threat-bar"><span class="threat-bar-fill threat-low" style="width:25%"></span></div>
-                  <span class="threat-value mono">MODERATE</span>
-                </div>
-                <div class="threat-desc">Прозрачный контейнер предоставляет несанкционированный обзор корневой системы. Цветонос в неактивном состоянии — возможен разведывательный режим.</div>
-              </div>
-            </div>
-            <div class="about-data-col">
-              <div class="data-table">
-                <div class="data-row"><span class="data-key">Обозначение объекта</span><span class="data-val"><em>Phalaenopsis sp.</em> — Орхидея-мотылёк</span></div>
-                <div class="data-row"><span class="data-key">Регистрационный №</span><span class="data-val mono">BOT-2021-042-A</span></div>
-                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Подоконник, юго-западная экспозиция</span></div>
-                <div class="data-row"><span class="data-key">Дата постановки на учёт</span><span class="data-val mono">07.11.2021</span></div>
-                <div class="data-row"><span class="data-key">Класс роста</span><span class="data-val">Циклический — ожидание реактивации</span></div>
-                <div class="data-row highlight"><span class="data-key">Уровень устойчивости</span><span class="data-val"><span class="badge badge-amber">УМЕРЕННЫЙ</span><span class="data-note">корневая система под контролем</span></span></div>
-                <div class="data-row"><span class="data-key">Тип контейнера</span><span class="data-val mono">Прозрачный — обеспечивает обзор корней ✓</span></div>
-                <div class="data-row"><span class="data-key">Статус цветоноса</span><span class="data-val"><span class="badge badge-amber">НЕАКТИВЕН</span><span class="data-note">сезонный / подозрительный</span></span></div>
-                <div class="data-row"><span class="data-key">Внешние корни</span><span class="data-val mono">2 ед. — зафиксированы, свисающие</span></div>
-                <div class="data-row"><span class="data-key">Индекс молчания</span><span class="data-val mono">10.0 / 10.0 — Максимальный</span></div>
-                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">Временно пассивна. Реактивация возможна в сезон цветения.</span></div>
-                <div class="data-row"><span class="data-key">Уровень доступа</span><span class="data-val"><span class="badge badge-amber">CONFIDENTIAL — Уровень 2</span></span></div>
-              </div>
-              <p class="data-footnote">¹ Прозрачный контейнер интерпретируется как проявление прозрачности перед наблюдателями. Однако возможна двойная интерпретация. Расследование открыто. Ref: INC-2023-042-ROOT. SIGINT-данные: аномалий не зафиксировано.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── OBJECT 043 ── -->
-        <div class="tab-panel" id="tab-043">
-          <div class="about-grid">
-            <div class="about-image-col">
-              <div class="object-image-frame">
-                <img src="assets/plant-2.jpg" alt="Объект № 043 — Crassula ovata" class="object-image">
-                <div class="object-image-overlay">
-                  <span class="mono small">OBJ-043 / JADE / FEED-02</span>
-                  <span class="pulse-dot"></span>
-                </div>
-              </div>
-              <div class="object-threat-wrap">
-                <div class="threat-label">Уровень угрозы</div>
-                <div class="threat-bar-wrap">
-                  <div class="threat-bar"><span class="threat-bar-fill threat-low" style="width:20%"></span></div>
-                  <span class="threat-value mono">LOW</span>
-                </div>
-                <div class="threat-desc">Один засохший лист в нижнем левом секторе вызвал первоначальные подозрения. Расследование прекращено ввиду отсутствия умысла.</div>
-              </div>
-            </div>
-            <div class="about-data-col">
-              <div class="data-table">
-                <div class="data-row"><span class="data-key">Обозначение объекта</span><span class="data-val"><em>Crassula ovata</em> — Денежное дерево</span></div>
-                <div class="data-row"><span class="data-key">Регистрационный №</span><span class="data-val mono">BOT-2019-043-B</span></div>
-                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Горизонтальная поверхность, зона естественного освещения</span></div>
-                <div class="data-row"><span class="data-key">Дата постановки на учёт</span><span class="data-val mono">03.04.2019</span></div>
-                <div class="data-row"><span class="data-key">Класс роста</span><span class="data-val">Накопительный — медленный, целенаправленный</span></div>
-                <div class="data-row highlight"><span class="data-key">Коэф. накопления влаги</span><span class="data-val"><span class="badge badge-red">9.1 / 10.0 — КРИТИЧЕСКИ ВЫСОКИЙ</span></span></div>
-                <div class="data-row"><span class="data-key">Уровень устойчивости</span><span class="data-val mono">Высокий — резервы влаги подтверждены</span></div>
-                <div class="data-row"><span class="data-key">Засохший лист (н/л)</span><span class="data-val"><span class="badge badge-amber">ЗАФИКСИРОВАН</span><span class="data-note">расследование закрыто</span></span></div>
-                <div class="data-row"><span class="data-key">Индекс молчания</span><span class="data-val mono">10.0 / 10.0 — Максимальный</span></div>
-                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">Пассивна. Возможно, накапливает ресурсы для длительной операции.</span></div>
-                <div class="data-row"><span class="data-key">Уровень доступа</span><span class="data-val"><span class="badge badge-default">ОТКРЫТЫЙ — Публичный уровень</span></span></div>
-              </div>
-              <p class="data-footnote">¹ Необычно высокий коэффициент накопления влаги отмечен как потенциально значимый. Аналитики Бюро расходятся во мнениях. Большинство склоняется к версии о физиологической норме суккулентов. Меньшинство продолжает настаивать. Дебаты продолжаются.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── OBJECT 044 ── -->
-        <div class="tab-panel" id="tab-044">
-          <div class="about-grid">
-            <div class="about-image-col">
-              <div class="object-image-frame">
-                <img src="assets/plant-3.jpg" alt="Объект № 044 — Cactaceae sp." class="object-image">
-                <div class="object-image-overlay">
-                  <span class="mono small">OBJ-044 / BINARY / FEED-03</span>
                   <span class="pulse-dot"></span>
                 </div>
               </div>
@@ -310,24 +241,130 @@
                   <div class="threat-bar"><span class="threat-bar-fill" style="width:55%; background:var(--amber)"></span></div>
                   <span class="threat-value mono" style="color:var(--amber-hi)">ELEVATED</span>
                 </div>
-                <div class="threat-desc">Двойная структура объекта интерпретируется как потенциально децентрализованное командование. Наличие шипов подтверждено. Руками не трогать.</div>
+                <div class="threat-desc">⚠ Субстрат в прозрачном контейнере визуально тёмный — признак избыточного увлажнения. Цветонос нежизнеспособен. Наружные корни: 2 ед. Рекомендовано сокращение полива.</div>
+              </div>
+              <div class="analysis-box analysis-box--amber">
+                <div class="analysis-title">FIELD ANALYSIS — 29.04.2026</div>
+                <div class="analysis-row"><span class="analysis-icon warn">!</span><span>Субстрат: <strong>избыточно влажный</strong> — тёмный цвет коры</span></div>
+                <div class="analysis-row"><span class="analysis-icon warn">!</span><span>Цветонос: <strong>мёртвый/сухой</strong> — рекомендована обрезка</span></div>
+                <div class="analysis-row"><span class="analysis-icon ok">✓</span><span>Листья: тургор хороший, цвет насыщенный тёмно-зелёный</span></div>
+                <div class="analysis-row"><span class="analysis-icon warn">!</span><span>Наружные корни (2 ед.): возможно вытеснены избытком влаги</span></div>
+                <div class="analysis-row"><span class="analysis-icon warn">!</span><span>Рекомендация: дать субстрату полностью просохнуть перед след. поливом</span></div>
               </div>
             </div>
             <div class="about-data-col">
               <div class="data-table">
-                <div class="data-row"><span class="data-key">Обозначение объекта</span><span class="data-val"><em>Cactaceae sp.</em> — Вид не установлен (двойной)</span></div>
+                <div class="data-row"><span class="data-key">Обозначение объекта</span><span class="data-val"><em>Phalaenopsis sp.</em> — Орхидея-мотылёк</span></div>
+                <div class="data-row"><span class="data-key">Регистрационный №</span><span class="data-val mono">BOT-2021-042-A</span></div>
+                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Подоконник, ю/з экспозиция, каменная стена фоном</span></div>
+                <div class="data-row"><span class="data-key">Дата постановки на учёт</span><span class="data-val mono">07.11.2021</span></div>
+                <div class="data-row"><span class="data-key">Класс роста</span><span class="data-val">Циклический — ожидание реактивации</span></div>
+                <div class="data-row highlight"><span class="data-key">Влажность субстрата</span><span class="data-val"><span class="badge badge-red">ИЗБЫТОЧНАЯ</span><span class="data-note">визуальный анализ 29.04.2026</span></span></div>
+                <div class="data-row"><span class="data-key">Тип контейнера</span><span class="data-val mono">Прозрачный — обеспечивает мониторинг корней ✓</span></div>
+                <div class="data-row"><span class="data-key">Статус цветоноса</span><span class="data-val"><span class="badge badge-red">НЕЖИЗНЕСПОСОБЕН</span><span class="data-note">обрезка рекомендована</span></span></div>
+                <div class="data-row"><span class="data-key">Наружные корни</span><span class="data-val mono">2 ед. — свисающие, причина изучается</span></div>
+                <div class="data-row"><span class="data-key">Индекс молчания</span><span class="data-val mono">10.0 / 10.0 — Максимальный</span></div>
+                <div class="data-row"><span class="data-key">Протокол полива</span><span class="data-val">Дать субстрату ПОЛНОСТЬЮ просохнуть между поливами</span></div>
+                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">Риск переполива. Реактивация цветения возможна после нормализации.</span></div>
+                <div class="data-row"><span class="data-key">Уровень доступа</span><span class="data-val"><span class="badge badge-amber">CONFIDENTIAL — Уровень 2</span></span></div>
+              </div>
+              <p class="data-footnote">¹ Визуальный анализ 29.04.2026: тёмный цвет субстрата в прозрачном контейнере — индикатор переувлажнения. Phalaenopsis категорически не переносит застоя воды у корней. Наружные воздушные корни являются нормой, однако их избыток может свидетельствовать о вытеснении из субстрата. Ref: INC-2026-042-WATER.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── OBJECT 043 ── -->
+        <div class="tab-panel" id="tab-043">
+          <div class="about-grid">
+            <div class="about-image-col">
+              <div class="object-image-frame">
+                <img src="assets/plant-2.png" alt="Объект № 043 — Crassula ovata" class="object-image">
+                <div class="object-image-overlay">
+                  <span class="mono small">OBJ-043 / JADE / FEED-02</span>
+                  <span class="pulse-dot"></span>
+                </div>
+              </div>
+              <div class="object-threat-wrap">
+                <div class="threat-label">Уровень угрозы</div>
+                <div class="threat-bar-wrap">
+                  <div class="threat-bar"><span class="threat-bar-fill" style="width:65%; background:var(--red)"></span></div>
+                  <span class="threat-value mono" style="color:var(--red-hi)">HIGH</span>
+                </div>
+                <div class="threat-desc">🚨 В поддоне зафиксирована стоячая вода — критический фактор риска для суккулентов. Нижний лист с покраснением. Немедленное вмешательство рекомендовано.</div>
+              </div>
+              <div class="analysis-box analysis-box--red">
+                <div class="analysis-title">FIELD ANALYSIS — 29.04.2026 // URGENT</div>
+                <div class="analysis-row"><span class="analysis-icon crit">‼</span><span>Поддон: <strong>обнаружена стоячая вода</strong> — риск корневой гнили</span></div>
+                <div class="analysis-row"><span class="analysis-icon warn">!</span><span>Нижний лист: <strong>покраснение</strong> — стресс от переполива или света</span></div>
+                <div class="analysis-row"><span class="analysis-icon ok">✓</span><span>Молодые побеги: жёлто-зелёные — активный рост подтверждён</span></div>
+                <div class="analysis-row"><span class="analysis-icon ok">✓</span><span>Основная масса листьев: здоровая, тургор сохранён</span></div>
+                <div class="analysis-row"><span class="analysis-icon crit">‼</span><span>ДЕЙСТВИЕ: вылить воду из поддона НЕМЕДЛЕННО</span></div>
+              </div>
+            </div>
+            <div class="about-data-col">
+              <div class="data-table">
+                <div class="data-row"><span class="data-key">Обозначение объекта</span><span class="data-val"><em>Crassula ovata</em> — Денежное дерево</span></div>
+                <div class="data-row"><span class="data-key">Регистрационный №</span><span class="data-val mono">BOT-2019-043-B</span></div>
+                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Белая поверхность, зона умеренного освещения</span></div>
+                <div class="data-row"><span class="data-key">Дата постановки на учёт</span><span class="data-val mono">03.04.2019</span></div>
+                <div class="data-row"><span class="data-key">Класс роста</span><span class="data-val">Накопительный — активный, молодые побеги подтверждены</span></div>
+                <div class="data-row highlight"><span class="data-key">Статус поддона</span><span class="data-val"><span class="badge badge-red">СТОЯЧАЯ ВОДА</span><span class="data-note">НЕМЕДЛЕННО ВЫЛИТЬ</span></span></div>
+                <div class="data-row highlight"><span class="data-key">Нижний лист</span><span class="data-val"><span class="badge badge-amber">ПОКРАСНЕНИЕ</span><span class="data-note">стресс — наблюдение</span></span></div>
+                <div class="data-row"><span class="data-key">Молодые побеги</span><span class="data-val"><span class="badge badge-green">АКТИВНЫ</span><span class="data-note">жёлто-зелёный цвет нормален</span></span></div>
+                <div class="data-row"><span class="data-key">Протокол полива</span><span class="data-val">Полив только при полностью сухом субстрате. Поддон опустошать.</span></div>
+                <div class="data-row"><span class="data-key">Индекс молчания</span><span class="data-val mono">10.0 / 10.0 — Максимальный</span></div>
+                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">ПОВЫШЕННАЯ. Стоячая вода — прямая угроза корневой системе.</span></div>
+                <div class="data-row"><span class="data-key">Уровень доступа</span><span class="data-val"><span class="badge badge-default">ОТКРЫТЫЙ — Публичный уровень</span></span></div>
+              </div>
+              <p class="data-footnote">¹ Визуальный анализ 29.04.2026: стоячая вода в поддоне является основной угрозой для Crassula ovata. Корневая гниль у суккулентов развивается быстро и необратимо. Покраснение нижнего листа — ранний признак стресса. Молодые жёлто-зелёные побеги свидетельствуют о сохраняющейся жизнеспособности. Ref: ALERT-2026-043-WATER.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── OBJECT 044 ── -->
+        <div class="tab-panel" id="tab-044">
+          <div class="about-grid">
+            <div class="about-image-col">
+              <div class="object-image-frame">
+                <img src="assets/plant-3.png" alt="Объект № 044 — Cactaceae sp." class="object-image">
+                <div class="object-image-overlay">
+                  <span class="mono small">OBJ-044 / BINARY / FEED-03</span>
+                  <span class="pulse-dot"></span>
+                </div>
+              </div>
+              <div class="object-threat-wrap">
+                <div class="threat-label">Уровень угрозы</div>
+                <div class="threat-bar-wrap">
+                  <div class="threat-bar"><span class="threat-bar-fill threat-low" style="width:12%"></span></div>
+                  <span class="threat-value mono">MINIMAL</span>
+                </div>
+                <div class="threat-desc">✓ Наилучшее состояние из всех четырёх объектов. Оба ствола здоровы, тургор плотный, шипы активны. Единственный объект, не требующий вмешательства.</div>
+              </div>
+              <div class="analysis-box analysis-box--green">
+                <div class="analysis-title">FIELD ANALYSIS — 29.04.2026 // ALL CLEAR</div>
+                <div class="analysis-row"><span class="analysis-icon ok">✓</span><span>Оба ствола: <strong>упругие, насыщенного зелёного цвета</strong></span></div>
+                <div class="analysis-row"><span class="analysis-icon ok">✓</span><span>Субстрат: декоративный гравий — дренаж оптимален</span></div>
+                <div class="analysis-row"><span class="analysis-icon ok">✓</span><span>Ареолы с белыми шипами: нормальные, не обесцвечены</span></div>
+                <div class="analysis-row"><span class="analysis-icon ok">✓</span><span>Деревянная поверхность: обеспечивает стабильную дислокацию</span></div>
+                <div class="analysis-row"><span class="analysis-icon warn">!</span><span>Полив: не чаще 1 раза в месяц — субстрат должен быть сухим</span></div>
+              </div>
+            </div>
+            <div class="about-data-col">
+              <div class="data-table">
+                <div class="data-row"><span class="data-key">Обозначение объекта</span><span class="data-val"><em>Cactaceae sp.</em> — предположительно Gymnocalycium</span></div>
                 <div class="data-row"><span class="data-key">Регистрационный №</span><span class="data-val mono">BOT-2023-044-C</span></div>
-                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Деревянная горизонтальная поверхность (предположительно стол)</span></div>
+                <div class="data-row"><span class="data-key">Место дислокации</span><span class="data-val">Деревянная поверхность, тёплый боковой свет</span></div>
                 <div class="data-row"><span class="data-key">Дата постановки на учёт</span><span class="data-val mono">15.08.2023</span></div>
                 <div class="data-row"><span class="data-key">Класс роста</span><span class="data-val">Вертикальный — две независимые точки роста</span></div>
-                <div class="data-row highlight"><span class="data-key">Число независимых стволов</span><span class="data-val"><span class="badge badge-red">2 — НЕСТАНДАРТНО</span><span class="data-note">возможна параллельная структура</span></span></div>
-                <div class="data-row"><span class="data-key">Наличие шипов</span><span class="data-val"><span class="badge badge-amber">ПОДТВЕРЖДЕНО</span><span class="data-note">контакт не рекомендован</span></span></div>
-                <div class="data-row"><span class="data-key">Уровень устойчивости</span><span class="data-val mono">Высокий — адаптирован к экстремальным условиям</span></div>
+                <div class="data-row highlight"><span class="data-key">Общее состояние</span><span class="data-val"><span class="badge badge-green">ОТЛИЧНОЕ</span><span class="data-note">лучший объект коллекции</span></span></div>
+                <div class="data-row"><span class="data-key">Тургор стволов</span><span class="data-val"><span class="badge badge-green">ПЛОТНЫЙ</span><span class="data-note">обезвоживания нет</span></span></div>
+                <div class="data-row"><span class="data-key">Наличие шипов</span><span class="data-val"><span class="badge badge-amber">ПОДТВЕРЖДЕНО</span><span class="data-note">тактильный контакт не рекомендован</span></span></div>
+                <div class="data-row"><span class="data-key">Протокол полива</span><span class="data-val">1 раз в 3–4 недели. Только при полностью сухом субстрате.</span></div>
                 <div class="data-row"><span class="data-key">Индекс молчания</span><span class="data-val mono">10.0 / 10.0 — Максимальный</span></div>
-                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">ТРЕБУЕТ НАБЛЮДЕНИЯ. Двойная структура вызывает обоснованные подозрения.</span></div>
+                <div class="data-row"><span class="data-key">Оценка угрозы</span><span class="data-val">Минимальная. Физическая угроза для наблюдателя — шипы (ненамеренно).</span></div>
                 <div class="data-row"><span class="data-key">Уровень доступа</span><span class="data-val"><span class="badge badge-amber">RESTRICTED — Уровень 2</span></span></div>
               </div>
-              <p class="data-footnote">¹ Объект был добавлен в реестр после анонимного сообщения о «необычной форме» горшечного растения. После проверки угроза была классифицирована как «ботаническая аномалия умеренного значения». Наблюдение продолжается. Тактильный контакт запрещён до завершения оценки.</p>
+              <p class="data-footnote">¹ Визуальный анализ 29.04.2026: объект BINARY демонстрирует образцовое состояние. Декоративный гравий обеспечивает идеальный дренаж. Двойная структура биологически обусловлена — классифицирована как «природная аномалия без оперативного значения». Вмешательств не требуется.</p>
             </div>
           </div>
         </div>
@@ -478,90 +515,179 @@
           </p>
         </div>
 
-        <div class="archive-table">
-          <div class="archive-table-header">
-            <span>Дата</span>
-            <span>Объект / Тип</span>
-            <span>Описание события</span>
-            <span>Статус</span>
+        <!-- ── OBJ 041 DRAGON ── -->
+        <div class="archive-obj-group">
+          <div class="archive-obj-header">
+            <span class="archive-obj-num">№ 041</span>
+            <span class="archive-obj-code">«DRAGON»</span>
+            <span class="archive-obj-species">Dracaena marginata</span>
+            <span class="badge badge-amber" style="margin-left:auto;font-size:0.55rem">MODERATE</span>
           </div>
-
-          <div class="archive-row" data-type="routine">
-            <div class="archive-date mono">22.04.2026</div>
-            <div class="archive-type"><span class="badge badge-default">№041 — Плановая</span></div>
-            <div class="archive-desc">Плановая инспекция завершена. Объект демонстрирует устойчивое состояние. Нового роста не зафиксировано. Условия окружающей среды: облачно, 18°C — признано «приемлемым» по сезонным нормам. Наблюдатель: Household Authority, старший уровень.</div>
-            <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+          <div class="archive-table">
+            <div class="archive-table-header">
+              <span>Дата</span><span>Тип события</span><span>Описание</span><span>Статус</span>
+            </div>
+            <div class="archive-row" data-type="incident">
+              <div class="archive-date mono">29.04.2026</div>
+              <div class="archive-type"><span class="badge badge-amber">Аналитическое</span></div>
+              <div class="archive-desc">Визуальный анализ подтвердил потемнение кончиков листьев на ≥5 фрондах. Диагноз: чувствительность к фториду и/или хлору водопроводной воды. Угрозы жизнедеятельности нет. Рекомендован переход на фильтрованную воду. Ref: ANA-2026-041-FLR.</div>
+              <div class="archive-status"><span class="badge badge-amber">Рекомендация</span></div>
+            </div>
+            <div class="archive-row" data-type="routine">
+              <div class="archive-date mono">22.04.2026</div>
+              <div class="archive-type"><span class="badge badge-default">Плановая</span></div>
+              <div class="archive-desc">Плановая инспекция завершена. Объект демонстрирует устойчивое состояние. Нового роста не зафиксировано. Условия: облачно, 18°C — признано «приемлемым». Наблюдатель: Household Authority, ст. уровень.</div>
+              <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+            </div>
+            <div class="archive-row" data-type="hydration">
+              <div class="archive-date mono">18.02.2025</div>
+              <div class="archive-type"><span class="badge badge-default">Гидратация</span></div>
+              <div class="archive-desc">Событие полива успешно завершено. Объём: ~300 мл. Впитывание подтверждено через 2 ч. Отклонений не выявлено. Примечание: используется водопроводная вода — требует пересмотра.</div>
+              <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+            </div>
+            <div class="archive-row" data-type="postural">
+              <div class="archive-date mono">07.01.2025</div>
+              <div class="archive-type"><span class="badge badge-amber">Постуральное</span></div>
+              <div class="archive-desc">Наклон ~3° в сторону источника света. Корректирующий поворот на 45° произведён ботаническим офицером. Постинспекция: удовлетворительно.</div>
+              <div class="archive-status"><span class="badge badge-green">Устранено</span></div>
+            </div>
+            <div class="archive-row" data-type="notable">
+              <div class="archive-date mono">12.04.2024</div>
+              <div class="archive-type"><span class="badge badge-green">Значимое</span></div>
+              <div class="archive-desc">Объект произвёл один (1) новый лист. Лист признан здоровым, длина 7 см. Подано в Федеральный реестр в установленный 24-часовой срок. Ref: LEAF-2024-041-001.</div>
+              <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+            </div>
+            <div class="archive-row" data-type="emergency">
+              <div class="archive-date mono">02.06.2022</div>
+              <div class="archive-type"><span class="badge badge-red">Экстренное</span></div>
+              <div class="archive-desc">Экстренная гидратация. Засуха почвы: Уровень 4. Дефицит влаги ~500 мл. Причина: отсутствие наблюдателя 12 дней (незарегистрировано). Время восстановления: 48 ч.</div>
+              <div class="archive-status"><span class="badge badge-green">Устранено</span></div>
+            </div>
+            <div class="archive-row" data-type="historic">
+              <div class="archive-date mono">14.03.2014</div>
+              <div class="archive-type"><span class="badge badge-green">Регистрация</span></div>
+              <div class="archive-desc">Объект №041 официально зарегистрирован. Программа наблюдения инициирована. Class B Indoor Botanical Asset. Высота на момент приёма: ~60 см. Это основополагающий документ операции GREENWATCH.</div>
+              <div class="archive-status"><span class="badge badge-green">Осн. запись</span></div>
+            </div>
           </div>
+        </div>
 
-          <div class="archive-row" data-type="hydration">
-            <div class="archive-date mono">18.02.2025</div>
-            <div class="archive-type"><span class="badge badge-default">№041 — Гидратация</span></div>
-            <div class="archive-desc">Событие полива успешно завершено. Параметры гидратации восстановлены до оптимального уровня. Продолжительность: ~45 секунд. Объём: ~300 мл. Впитывание подтверждено через 2 часа. Отклонений не выявлено.</div>
-            <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+        <!-- ── OBJ 042 MOTH ── -->
+        <div class="archive-obj-group">
+          <div class="archive-obj-header">
+            <span class="archive-obj-num">№ 042</span>
+            <span class="archive-obj-code">«MOTH»</span>
+            <span class="archive-obj-species">Phalaenopsis sp.</span>
+            <span class="badge badge-red" style="margin-left:auto;font-size:0.55rem">ELEVATED</span>
           </div>
-
-          <div class="archive-row" data-type="postural">
-            <div class="archive-date mono">07.01.2025</div>
-            <div class="archive-type"><span class="badge badge-amber">№041 — Постуральное</span></div>
-            <div class="archive-desc">Объект зафиксирован в положении с наклоном ~3° в сторону основного источника света. Корректирующий поворот на 45° произведён назначенным ботаническим офицером (гражданский, без регистрации). Постинспекция: удовлетворительно.</div>
-            <div class="archive-status"><span class="badge badge-green">Устранено</span></div>
+          <div class="archive-table">
+            <div class="archive-table-header">
+              <span>Дата</span><span>Тип события</span><span>Описание</span><span>Статус</span>
+            </div>
+            <div class="archive-row" data-type="incident">
+              <div class="archive-date mono">29.04.2026</div>
+              <div class="archive-type"><span class="badge badge-red">Тревога</span></div>
+              <div class="archive-desc">Визуальный анализ: субстрат в прозрачном контейнере визуально тёмный — признак переувлажнения. Цветонос нежизнеспособен — рекомендована обрезка до второго узла. Зарегистрировано как INC-2026-042-WATER. Полив прекратить до полного просыхания.</div>
+              <div class="archive-status"><span class="badge badge-amber">Вмешательство</span></div>
+            </div>
+            <div class="archive-row" data-type="notable">
+              <div class="archive-date mono">14.02.2025</div>
+              <div class="archive-type"><span class="badge badge-green">Значимое</span></div>
+              <div class="archive-desc">Объект завершил цикл цветения: последний цветок опал после 74 дней (рекорд наблюдения). Цветонос оставлен для потенциального вторичного цветения. Наблюдение усилено.</div>
+              <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+            </div>
+            <div class="archive-row" data-type="notable">
+              <div class="archive-date mono">01.12.2024</div>
+              <div class="archive-type"><span class="badge badge-green">Цветение</span></div>
+              <div class="archive-desc">Объект вступил в фазу цветения. Первый бутон раскрылся в 09:43 по местному времени. Событие зафиксировано. Количество бутонов: 7. Полив сокращён согласно протоколу MOTH-BLOOM-02.</div>
+              <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+            </div>
+            <div class="archive-row" data-type="audit">
+              <div class="archive-date mono">07.11.2021</div>
+              <div class="archive-type"><span class="badge badge-green">Регистрация</span></div>
+              <div class="archive-desc">Объект №042 «MOTH» официально поставлен на учёт. Прозрачный контейнер отмечен как нестандартный — одобрен для мониторинга корней. Статус цветоноса: активный. Допуск: CONFIDENTIAL.</div>
+              <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+            </div>
           </div>
+        </div>
 
-          <div class="archive-row" data-type="notable">
-            <div class="archive-date mono">12.04.2024</div>
-            <div class="archive-type"><span class="badge badge-green">№041 — Значимое</span></div>
-            <div class="archive-desc">Объект произвёл один (1) новый лист. Событие зарегистрировано и подано в Федеральный реестр значимых ботанических событий в установленный 24-часовой срок. Лист признан здоровым, длина 7 см. Ref: REF-LEAF-2024-041-001.</div>
-            <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+        <!-- ── OBJ 043 JADE ── -->
+        <div class="archive-obj-group">
+          <div class="archive-obj-header">
+            <span class="archive-obj-num">№ 043</span>
+            <span class="archive-obj-code">«JADE»</span>
+            <span class="archive-obj-species">Crassula ovata</span>
+            <span class="badge badge-red" style="margin-left:auto;font-size:0.55rem">HIGH</span>
           </div>
-
-          <div class="archive-row" data-type="incident">
-            <div class="archive-date mono">03.11.2023</div>
-            <div class="archive-type"><span class="badge badge-amber">№041 — Эстетический</span></div>
-            <div class="archive-desc">Зафиксировано незначительное снижение визуальной уверенности. Кончик левого нижнего листа обнаруживает потемнение (≈4 мм). Причина не установлена. Под подозрением: воздействие сквозняка или несанкционированный перелив. Дело открыто. INC-2023-011.</div>
-            <div class="archive-status"><span class="badge badge-amber">На рассмотрении</span></div>
+          <div class="archive-table">
+            <div class="archive-table-header">
+              <span>Дата</span><span>Тип события</span><span>Описание</span><span>Статус</span>
+            </div>
+            <div class="archive-row" data-type="emergency">
+              <div class="archive-date mono">29.04.2026</div>
+              <div class="archive-type"><span class="badge badge-red">Критическое</span></div>
+              <div class="archive-desc">ALERT-2026-043-WATER: обнаружена стоячая вода в поддоне. Риск корневой гнили — НЕМЕДЛЕННОЕ вмешательство. Дополнительно: покраснение нижнего листа — стресс-индикатор. Вода из поддона должна быть удалена в течение 24 часов. Полив запрещён до полного просыхания субстрата.</div>
+              <div class="archive-status"><span class="badge badge-red">Требует действий</span></div>
+            </div>
+            <div class="archive-row" data-type="notable">
+              <div class="archive-date mono">11.03.2026</div>
+              <div class="archive-type"><span class="badge badge-green">Рост</span></div>
+              <div class="archive-desc">Зафиксированы новые жёлто-зелёные побеги (3 точки роста). Тургор основной листвы: хороший. Молодые листья — ожидаемый светло-зелёный оттенок. Рост подтверждён, несмотря на неоптимальный режим полива.</div>
+              <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+            </div>
+            <div class="archive-row" data-type="incident">
+              <div class="archive-date mono">18.09.2024</div>
+              <div class="archive-type"><span class="badge badge-amber">Инцидент</span></div>
+              <div class="archive-desc">Нижний лист отделился при неустановленных обстоятельствах. Версии: перегрузка питательными веществами, механическое воздействие или нормальное листосбрасывание. Лист помещён в карантин для наблюдения. INC-2024-043-LEAF.</div>
+              <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+            </div>
+            <div class="archive-row" data-type="audit">
+              <div class="archive-date mono">03.04.2019</div>
+              <div class="archive-type"><span class="badge badge-green">Регистрация</span></div>
+              <div class="archive-desc">Объект №043 «JADE» поставлен на учёт. Коэффициент накопления влаги: 9.1/10.0 — передан на аналитическое рассмотрение. Итог: «физиологическая норма суккулента». Class B. Наблюдение продолжается.</div>
+              <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+            </div>
           </div>
+        </div>
 
-          <div class="archive-row" data-type="audit">
-            <div class="archive-date mono">07.11.2021</div>
-            <div class="archive-type"><span class="badge badge-green">№042 — Регистрация</span></div>
-            <div class="archive-desc">Объект №042 «MOTH» официально поставлен на учёт Бюро. Начальные параметры зафиксированы. Прозрачный контейнер отмечен как нестандартный. Статус цветоноса на момент регистрации: активный. Уровень допуска: CONFIDENTIAL.</div>
-            <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+        <!-- ── OBJ 044 BINARY ── -->
+        <div class="archive-obj-group">
+          <div class="archive-obj-header">
+            <span class="archive-obj-num">№ 044</span>
+            <span class="archive-obj-code">«BINARY»</span>
+            <span class="archive-obj-species">Cactaceae sp. (предп. Gymnocalycium)</span>
+            <span class="badge badge-green" style="margin-left:auto;font-size:0.55rem">MINIMAL</span>
           </div>
-
-          <div class="archive-row" data-type="emergency">
-            <div class="archive-date mono">02.06.2022</div>
-            <div class="archive-type"><span class="badge badge-red">№041 — Экстренное</span></div>
-            <div class="archive-desc">Экстренная гидратация. Уровень засухи почвы достиг критического порога (Уровень 4 — Тяжёлый). Немедленное вмешательство санкционировано. Дефицит влаги: ~500 мл. Время восстановления: 48 ч. Причина: отсутствие наблюдателя на объекте (12 дней, незарегистрировано).</div>
-            <div class="archive-status"><span class="badge badge-green">Устранено</span></div>
-          </div>
-
-          <div class="archive-row" data-type="audit">
-            <div class="archive-date mono">03.04.2019</div>
-            <div class="archive-type"><span class="badge badge-green">№043 — Регистрация</span></div>
-            <div class="archive-desc">Объект №043 «JADE» поставлен на учёт. Необычно высокий коэффициент накопления влаги (9.1/10.0) зафиксирован и передан на аналитическое рассмотрение. Итог рассмотрения: «физиологическая норма суккулента». Наблюдение продолжается.</div>
-            <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
-          </div>
-
-          <div class="archive-row" data-type="notable">
-            <div class="archive-date mono">15.08.2023</div>
-            <div class="archive-type"><span class="badge badge-amber">№044 — Регистрация</span></div>
-            <div class="archive-desc">Объект №044 «BINARY» поставлен на учёт после анонимного сообщения о «необычной форме» горшечного растения. Двойная структура ствола классифицирована как «ботаническая аномалия умеренного значения». Тактильный контакт запрещён. Уровень допуска: RESTRICTED.</div>
-            <div class="archive-status"><span class="badge badge-amber">Наблюдение</span></div>
-          </div>
-
-          <div class="archive-row" data-type="historic">
-            <div class="archive-date mono">14.03.2014</div>
-            <div class="archive-type"><span class="badge badge-green">№041 — Исторически значимое</span></div>
-            <div class="archive-desc">Объект №041 официально зарегистрирован. Программа наблюдения инициирована. Классификация: Class B Indoor Botanical Asset. Начальная высота: ~60 см. Состояние на момент приёма: хорошее. Эта запись является основополагающим документом операции GREENWATCH — все последующие записи производны от данного акта.</div>
-            <div class="archive-status"><span class="badge badge-green">Основная запись</span></div>
+          <div class="archive-table">
+            <div class="archive-table-header">
+              <span>Дата</span><span>Тип события</span><span>Описание</span><span>Статус</span>
+            </div>
+            <div class="archive-row" data-type="routine">
+              <div class="archive-date mono">29.04.2026</div>
+              <div class="archive-type"><span class="badge badge-green">ALL CLEAR</span></div>
+              <div class="archive-desc">Визуальный анализ: образцовое состояние. Оба ствола — упругие, насыщенно-зелёные. Ареолы с белыми шипами без обесцвечивания. Декоративный гравий обеспечивает оптимальный дренаж. Вмешательств не требуется.</div>
+              <div class="archive-status"><span class="badge badge-green">Занесено</span></div>
+            </div>
+            <div class="archive-row" data-type="incident">
+              <div class="archive-date mono">05.01.2026</div>
+              <div class="archive-type"><span class="badge badge-amber">Тактильный</span></div>
+              <div class="archive-desc">Зафиксирован несанкционированный тактильный контакт с объектом (предполагаемый источник — гражданское лицо без допуска). Физический ущерб объекту не нанесён. Наблюдателю оказана первая помощь (незначительный укол шипом). Инцидент закрыт. INC-2026-044-SPINE.</div>
+              <div class="archive-status"><span class="badge badge-green">Закрыт</span></div>
+            </div>
+            <div class="archive-row" data-type="audit">
+              <div class="archive-date mono">15.08.2023</div>
+              <div class="archive-type"><span class="badge badge-amber">Регистрация</span></div>
+              <div class="archive-desc">Объект №044 «BINARY» поставлен на учёт после анонимного сообщения о «необычной форме». Двойная структура ствола классифицирована как «ботаническая аномалия умеренного значения». Тактильный контакт запрещён. Допуск: RESTRICTED.</div>
+              <div class="archive-status"><span class="badge badge-amber">Наблюдение</span></div>
+            </div>
           </div>
         </div>
 
         <div class="archive-footer">
-          <span class="mono small">Всего событий: 10</span>
-          <span class="mono small">Открытых инцидентов: 1</span>
+          <span class="mono small">Всего событий: 18</span>
+          <span class="mono small">Открытых инцидентов: 2</span>
           <span class="mono small">Целостность архива: Подтверждена</span>
-          <span class="mono small">Последний экспорт: 22.04.2026</span>
+          <span class="mono small">Последний экспорт: 29.04.2026</span>
         </div>
       </div>
     </section>
@@ -767,6 +893,41 @@
             <p>Ваш отчёт занесён в очередь на проверку. Расчётное время обработки: 30 рабочих дней.
             Вы можете возобновить стандартные наблюдательные мероприятия.</p>
             <span class="mono small">Incident Ref: INC-<span id="report-ref">000000</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SUBMIT PROMO ══ -->
+    <section class="section submit-promo" id="submit-promo">
+      <div class="container">
+        <div class="submit-promo-inner">
+          <div class="submit-promo-left">
+            <div class="section-label-wrap">
+              <span class="section-label">Программа расширения</span>
+              <span class="section-label badge-amber-text">$10 / объект</span>
+            </div>
+            <h2 class="submit-promo-title">У вас есть растение,<br>достойное наблюдения?</h2>
+            <p>Бюро международной ботанической безопасности принимает заявки на включение новых объектов в реестр государственного мониторинга. Ваше растение получит официальный регистрационный номер, оперативный псевдоним, и будет поставлено под непрерывное гражданское наблюдение.</p>
+            <p>Стоимость регистрации одного объекта: <strong>$10</strong>. Включает: присвоение номера, создание досье, публикацию в архиве событий. Оплата — при активации системы.</p>
+            <a href="submit.html" class="btn btn-gold">Подать объект на наблюдение →</a>
+          </div>
+          <div class="submit-promo-right">
+            <div class="submit-promo-card">
+              <div class="submit-card-header mono">Что вы получаете</div>
+              <ul class="submit-card-list">
+                <li><span class="ok-icon">✓</span> Официальный регистрационный номер (BOT-ГГГГ-XXX)</li>
+                <li><span class="ok-icon">✓</span> Оперативный псевдоним в стиле ЦРУ</li>
+                <li><span class="ok-icon">✓</span> Визуальный анализ состояния объекта</li>
+                <li><span class="ok-icon">✓</span> Публикация досье на этом портале</li>
+                <li><span class="ok-icon">✓</span> Первичная запись в архив наблюдений</li>
+                <li><span class="ok-icon">✓</span> Статус «Гражданский наблюдатель» с правом подачи рапортов</li>
+              </ul>
+              <div class="submit-card-price">
+                <span class="price-amount">$10</span>
+                <span class="price-desc">единоразово за объект</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

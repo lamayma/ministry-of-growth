@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подать объект — Ministry of Growth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="submit.css">
+</head>
+<body class="submit-page">
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <div class="nav-brand">
+        <a href="index.html" style="display:flex;align-items:center;gap:14px;text-decoration:none;">
+          <svg class="nav-emblem" viewBox="0 0 32 32" fill="none">
+            <rect x="1" y="1" width="30" height="30" stroke="currentColor" stroke-width="1"/>
+            <rect x="5" y="5" width="22" height="22" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+            <line x1="16" y1="1" x2="16" y2="31" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+            <line x1="1" y1="16" x2="31" y2="16" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1"/>
+            <circle cx="16" cy="16" r="1" fill="currentColor"/>
+          </svg>
+          <div class="nav-brand-text">
+            <span class="nav-title">Ministry of Growth</span>
+            <span class="nav-dept">Bureau of International Botanical Security</span>
+          </div>
+        </a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-op-badge">OPERATION <span class="op-name">GREENWATCH</span></div>
+        <a href="index.html" class="btn btn-outline" style="font-size:0.72rem;padding:7px 16px;">← Портал наблюдения</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="submit-main">
+
+    <!-- Hero -->
+    <div class="submit-hero">
+      <div class="container">
+        <div class="submit-hero-label-row">
+          <span class="section-label">Форма MOG-SUB-01 — Rev. 1</span>
+          <span class="section-label">Программа расширения реестра</span>
+          <span class="section-label badge-gold-text">$10 / объект</span>
+        </div>
+        <h1 class="submit-hero-title">Регистрация<br>нового объекта наблюдения</h1>
+        <p class="submit-hero-sub">
+          Бюро международной ботанической безопасности принимает заявки на включение растений
+          в официальный реестр государственного мониторинга в рамках Операции GREENWATCH.
+          Каждый одобренный объект получает номер, псевдоним и полное досье.
+        </p>
+      </div>
+      <div class="submit-hero-grid-overlay"></div>
+    </div>
+
+    <div class="container submit-body">
+
+      <!-- Process steps -->
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num mono">01</div>
+          <div class="step-body">
+            <div class="step-title">Заполните заявку</div>
+            <p>Предоставьте информацию об объекте: вид, место дислокации, фото. Бюро проводит предварительную оценку.</p>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="process-step">
+          <div class="step-num mono">02</div>
+          <div class="step-body">
+            <div class="step-title">Оплата регистрации</div>
+            <p>После одобрения заявки производится оплата $10. Система оплаты подключается в ближайшее время.</p>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="process-step">
+          <div class="step-num mono">03</div>
+          <div class="step-body">
+            <div class="step-title">Публикация досье</div>
+            <p>Объект получает номер, псевдоним и досье. Первичный визуальный анализ проводится Бюро в течение 72 часов.</p>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="process-step">
+          <div class="step-num mono">04</div>
+          <div class="step-body">
+            <div class="step-title">Непрерывное наблюдение</div>
+            <p>Вы получаете статус «Гражданский наблюдатель» и право подавать рапорты об инцидентах напрямую в архив.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="submit-layout">
+
+        <!-- Form -->
+        <div class="submit-form-col">
+          <div class="form-doc-header">
+            <span class="mono small">Form MOG-SUB-01 — Rev. 1</span>
+            <span class="mono small">Уровень доступа: Открытый</span>
+          </div>
+          <form class="form submit-form" id="submit-form" novalidate>
+
+            <div class="form-section-title">Сведения о заявителе</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="sub-name">Полное имя <span class="required">*</span></label>
+                <input class="form-input" type="text" id="sub-name" name="name" placeholder="Как зарегистрировано" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="sub-email">Email для связи <span class="required">*</span></label>
+                <input class="form-input" type="email" id="sub-email" name="email" placeholder="agent@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="sub-region">Регион дислокации объекта <span class="required">*</span></label>
+                <input class="form-input" type="text" id="sub-region" name="region" placeholder="Город, район, этаж" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="sub-observer-class">Ваша текущая классификация</label>
+                <select class="form-input form-select" id="sub-observer-class" name="observer_class">
+                  <option value="">— Не зарегистрирован —</option>
+                  <option value="casual">Рядовой наблюдатель</option>
+                  <option value="dedicated">Преданный монитор</option>
+                  <option value="senior">Старший ботанический дозорный</option>
+                  <option value="honorary">Почётный счётчик листьев</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-title">Данные об объекте</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="sub-species">Вид растения <span class="required">*</span></label>
+                <input class="form-input" type="text" id="sub-species" name="species" placeholder="Dracaena marginata, Кактус и т.д." required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="sub-age">Примерный возраст объекта</label>
+                <input class="form-input" type="text" id="sub-age" name="age" placeholder="~2 года, неизвестен и т.д.">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="sub-location-desc">Описание места дислокации <span class="required">*</span></label>
+              <input class="form-input" type="text" id="sub-location-desc" name="location_desc" placeholder="Подоконник, рабочий стол, угол гостиной..." required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Категория объекта <span class="required">*</span></label>
+              <div class="category-grid">
+                <label class="category-opt">
+                  <input type="radio" name="category" value="succulent">
+                  <div class="category-card">
+                    <div class="category-icon">🌵</div>
+                    <div class="category-name">Суккулент / кактус</div>
+                  </div>
+                </label>
+                <label class="category-opt">
+                  <input type="radio" name="category" value="tropical">
+                  <div class="category-card">
+                    <div class="category-icon">🌿</div>
+                    <div class="category-name">Тропическое</div>
+                  </div>
+                </label>
+                <label class="category-opt">
+                  <input type="radio" name="category" value="orchid">
+                  <div class="category-card">
+                    <div class="category-icon">🪷</div>
+                    <div class="category-name">Орхидея</div>
+                  </div>
+                </label>
+                <label class="category-opt">
+                  <input type="radio" name="category" value="other">
+                  <div class="category-card">
+                    <div class="category-icon">🌱</div>
+                    <div class="category-name">Иное / неизвестно</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="sub-condition">Текущее состояние объекта <span class="required">*</span></label>
+              <select class="form-input form-select" id="sub-condition" name="condition" required>
+                <option value="">— Выберите —</option>
+                <option value="excellent">Отличное — без видимых проблем</option>
+                <option value="good">Хорошее — незначительные отклонения</option>
+                <option value="concerning">Требует внимания — есть симптомы</option>
+                <option value="critical">Критическое — срочное вмешательство</option>
+                <option value="unknown">Состояние неизвестно — прошу оценить</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="sub-photo-url">Ссылка на фото объекта</label>
+              <input class="form-input" type="url" id="sub-photo-url" name="photo_url" placeholder="https://... (Google Фото, Яндекс Диск, Imgur и т.д.)">
+              <span class="form-hint">Фотография поможет провести визуальный анализ состояния объекта</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="sub-description">Дополнительные сведения об объекте</label>
+              <textarea class="form-input form-textarea" id="sub-description" name="description"
+                placeholder="История объекта, особенности ухода, наблюдаемые аномалии, причины, по которым объект заслуживает государственного мониторинга..." rows="4"></textarea>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-title">Запрашиваемый псевдоним</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="sub-codename">Предпочтительный псевдоним</label>
+                <input class="form-input" type="text" id="sub-codename" name="codename" placeholder="SHADOW, VERDANT, SPIKE..." maxlength="20">
+                <span class="form-hint">Одно слово, на английском. Финальное решение — за Бюро.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="sub-priority">Запрашиваемый приоритет</label>
+                <select class="form-input form-select" id="sub-priority" name="priority">
+                  <option value="B">Class B — Стандартный</option>
+                  <option value="A">Class A — Приоритетный</option>
+                  <option value="C">Class C — Специальный (аномальный)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-divider"></div>
+
+            <div class="payment-notice">
+              <div class="payment-notice-icon">💳</div>
+              <div class="payment-notice-body">
+                <div class="payment-notice-title">Оплата: $10 за объект</div>
+                <p>После проверки заявки Бюро свяжется с вами по email с инструкциями по оплате.
+                Система онлайн-оплаты подключается в ближайшее время. Подача заявки — бесплатна и ни к чему не обязывает.</p>
+              </div>
+            </div>
+
+            <div class="form-submit-wrap">
+              <button class="btn btn-gold btn-full" type="submit" id="submit-btn">
+                Подать заявку на регистрацию объекта
+              </button>
+              <p class="form-disclaimer">
+                Подавая данную форму, вы подтверждаете, что являетесь законным хранителем указанного растения
+                и осознаёте, что регистрация влечёт за собой обязательство периодически информировать Бюро
+                о состоянии объекта. Бюро оставляет за собой право отклонить заявку без объяснения причин.
+                Наиболее вероятная причина отказа: растение слишком скучное.
+              </p>
+            </div>
+
+          </form>
+
+          <!-- Success -->
+          <div class="form-success hidden" id="submit-success">
+            <div class="success-icon">✓</div>
+            <div class="success-title mono">Заявка принята к рассмотрению</div>
+            <p>Бюро зарегистрировало вашу заявку. Предварительная оценка будет проведена в течение 72 часов.
+            После одобрения вы получите email с инструкциями по оплате и предварительным регистрационным номером.</p>
+            <div class="success-ref-row">
+              <span class="mono small">Номер заявки: SUB-<span id="submit-ref">000000</span></span>
+              <span class="mono small">Статус: НА РАССМОТРЕНИИ</span>
+            </div>
+            <a href="index.html" class="btn btn-outline" style="margin-top:16px">← Вернуться на портал</a>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="submit-sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">Текущий реестр</div>
+            <div class="sidebar-objects">
+              <div class="sidebar-obj">
+                <span class="mono small obj-num">041</span>
+                <span class="obj-name">DRAGON — <em>Dracaena marginata</em></span>
+                <span class="badge badge-green" style="font-size:0.55rem">АКТИВЕН</span>
+              </div>
+              <div class="sidebar-obj">
+                <span class="mono small obj-num">042</span>
+                <span class="obj-name">MOTH — <em>Phalaenopsis sp.</em></span>
+                <span class="badge badge-green" style="font-size:0.55rem">АКТИВЕН</span>
+              </div>
+              <div class="sidebar-obj">
+                <span class="mono small obj-num">043</span>
+                <span class="obj-name">JADE — <em>Crassula ovata</em></span>
+                <span class="badge badge-green" style="font-size:0.55rem">АКТИВЕН</span>
+              </div>
+              <div class="sidebar-obj">
+                <span class="mono small obj-num">044</span>
+                <span class="obj-name">BINARY — <em>Cactaceae sp.</em></span>
+                <span class="badge badge-green" style="font-size:0.55rem">АКТИВЕН</span>
+              </div>
+              <div class="sidebar-obj sidebar-obj--pending">
+                <span class="mono small obj-num">045</span>
+                <span class="obj-name">??? — ожидает заявки</span>
+                <span class="badge badge-default" style="font-size:0.55rem">ВАКАНТНО</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">Что входит в $10</div>
+            <ul class="sidebar-include-list">
+              <li><span class="ok-icon">✓</span> Официальный номер (BOT-ГГГГ-0XX)</li>
+              <li><span class="ok-icon">✓</span> Оперативный псевдоним ЦРУ-стиль</li>
+              <li><span class="ok-icon">✓</span> Визуальный анализ состояния</li>
+              <li><span class="ok-icon">✓</span> Досье на портале (публично)</li>
+              <li><span class="ok-icon">✓</span> Первичная запись в архив</li>
+              <li><span class="ok-icon">✓</span> Право подачи рапортов</li>
+              <li><span class="ok-icon">✓</span> Статус «Гражданский наблюдатель»</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card sidebar-card--faq">
+            <div class="sidebar-card-title">FAQ</div>
+            <div class="faq-item">
+              <div class="faq-q">Любое ли растение принимается?</div>
+              <div class="faq-a">Бюро рассматривает любые горшечные растения. Допускаются также: кактусы, суккуленты, орхидеи, папоротники, монстеры и другие объекты с потенциалом роста.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Могу ли я зарегистрировать несколько?</div>
+              <div class="faq-a">Да. Каждый объект оформляется отдельной заявкой по $10. Скидка при регистрации 3+ объектов обсуждается индивидуально.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Когда появится онлайн-оплата?</div>
+              <div class="faq-a">Система оплаты подключается в ближайшее время. Пока — подайте заявку, Бюро свяжется с вами по email.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Что если растение погибнет?</div>
+              <div class="faq-a">Объект переводится в статус «АРХИВНЫЙ» с соответствующей записью. Это также является частью официальной истории наблюдения.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (compact) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="justify-content:center;text-align:center;flex-direction:column;gap:6px">
+        <span class="mono small">© 2014–2026 Ministry of Growth / Bureau of International Botanical Security</span>
+        <span class="mono small">Стоимость регистрации может быть изменена Бюро без предварительного уведомления. Это справедливо.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll shadow
+    window.addEventListener('scroll', () => {
+      document.querySelector('.nav').style.borderBottomColor =
+        window.scrollY > 40 ? 'rgba(36,42,39,0.9)' : 'var(--border)';
+    }, { passive: true });
+
+    // Form submit
+    document.getElementById('submit-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const name    = document.getElementById('sub-name').value.trim();
+      const email   = document.getElementById('sub-email').value.trim();
+      const region  = document.getElementById('sub-region').value.trim();
+      const species = document.getElementById('sub-species').value.trim();
+      const cond    = document.getElementById('sub-condition').value;
+      const locDesc = document.getElementById('sub-location-desc').value.trim();
+      if (!name || !email || !region || !species || !cond || !locDesc) {
+        e.target.style.animation = 'none';
+        requestAnimationFrame(() => { e.target.style.animation = 'shake 0.4s ease'; });
+        return;
+      }
+      e.target.classList.add('hidden');
+      document.getElementById('submit-success').classList.remove('hidden');
+      document.getElementById('submit-ref').textContent = Math.floor(100000 + Math.random() * 900000);
+    });
+  </script>
+</body>
+</html>
