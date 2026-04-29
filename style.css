@@ -1278,7 +1278,7 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   opacity: 0;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   /* Fallback gradient when image not loaded */
