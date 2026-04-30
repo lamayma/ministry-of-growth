@@ -1,7 +1,9 @@
 node_modules/
 .vercel/
+.vercel
 .env
 .env.local
 .env*.local
-
-.vercel
+.next/
+.agents/
+.claude/

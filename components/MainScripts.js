@@ -297,11 +297,20 @@ function initReportForm() {
   if (!form) return
   const dateInput = form.querySelector('#inc-date')
   if (dateInput) dateInput.value = new Date().toISOString().split('T')[0]
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault()
-    if (!form.querySelector('#inc-type').value || !form.querySelector('#inc-desc').value.trim() || !form.querySelector('input[name="severity"]:checked')) {
-      shakeEl(form); return
-    }
+    const type     = form.querySelector('#inc-type').value
+    const desc     = form.querySelector('#inc-desc').value.trim()
+    const severity = form.querySelector('input[name="severity"]:checked')?.value
+    const date     = form.querySelector('#inc-date').value
+    if (!type || !desc || !severity) { shakeEl(form); return }
+
+    await fetch('/api/reports', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ incident_type: type, incident_date: date, description: desc, severity }),
+    })
+
     form.classList.add('hidden')
     success.classList.remove('hidden')
     if (refEl) refEl.textContent = Math.floor(100000 + Math.random() * 900000)

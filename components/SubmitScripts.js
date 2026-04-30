@@ -14,19 +14,40 @@ export default function SubmitScripts() {
     window.addEventListener('scroll', handleScroll, { passive: true })
 
     const form = document.getElementById('submit-form')
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault()
-      const name    = document.getElementById('sub-name').value.trim()
-      const email   = document.getElementById('sub-email').value.trim()
-      const region  = document.getElementById('sub-region').value.trim()
-      const species = document.getElementById('sub-species').value.trim()
-      const cond    = document.getElementById('sub-condition').value
-      const locDesc = document.getElementById('sub-location-desc').value.trim()
+      const name     = document.getElementById('sub-name').value.trim()
+      const email    = document.getElementById('sub-email').value.trim()
+      const region   = document.getElementById('sub-region').value.trim()
+      const species  = document.getElementById('sub-species').value.trim()
+      const cond     = document.getElementById('sub-condition').value
+      const locDesc  = document.getElementById('sub-location-desc').value.trim()
       if (!name || !email || !region || !species || !cond || !locDesc) {
         e.target.style.animation = 'none'
         requestAnimationFrame(() => { e.target.style.animation = 'shake 0.4s ease' })
         return
       }
+
+      await fetch('/api/submissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          region,
+          species,
+          condition:      cond,
+          location_desc:  locDesc,
+          age:            document.getElementById('sub-age').value.trim() || null,
+          category:       document.querySelector('input[name="category"]:checked')?.value || null,
+          photo_url:      document.getElementById('sub-photo-url').value.trim() || null,
+          description:    document.getElementById('sub-description').value.trim() || null,
+          codename:       document.getElementById('sub-codename').value.trim() || null,
+          priority:       document.getElementById('sub-priority').value || null,
+          observer_class: document.getElementById('sub-observer-class').value || null,
+        }),
+      })
+
       e.target.classList.add('hidden')
       document.getElementById('submit-success').classList.remove('hidden')
       document.getElementById('submit-ref').textContent =
