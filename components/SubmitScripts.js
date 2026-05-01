@@ -22,9 +22,25 @@ export default function SubmitScripts() {
       const species  = document.getElementById('sub-species').value.trim()
       const cond     = document.getElementById('sub-condition').value
       const locDesc  = document.getElementById('sub-location-desc').value.trim()
-      if (!name || !email || !region || !species || !cond || !locDesc) {
-        e.target.style.animation = 'none'
-        requestAnimationFrame(() => { e.target.style.animation = 'shake 0.4s ease' })
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+      const photoUrl = document.getElementById('sub-photo-url').value.trim()
+      const photoUrlOk = !photoUrl || /^https?:\/\/.+/.test(photoUrl)
+
+      if (!name || !email || !region || !species || !cond || !locDesc || !emailOk || !photoUrlOk) {
+        if (!emailOk) {
+          const el = document.getElementById('sub-email')
+          el.setCustomValidity('Введите корректный email (нужен символ @)')
+          el.reportValidity()
+          el.setCustomValidity('')
+        } else if (!photoUrlOk) {
+          const el = document.getElementById('sub-photo-url')
+          el.setCustomValidity('Ссылка должна начинаться с http:// или https://')
+          el.reportValidity()
+          el.setCustomValidity('')
+        } else {
+          e.target.style.animation = 'none'
+          requestAnimationFrame(() => { e.target.style.animation = 'shake 0.4s ease' })
+        }
         return
       }
 
