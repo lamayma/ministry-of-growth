@@ -279,11 +279,27 @@ function initRegisterForm() {
   const success = document.getElementById('register-success')
   const refEl = document.getElementById('success-ref')
   if (!form) return
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault()
-    if (!form.querySelector('#reg-name').value.trim() || !form.querySelector('#reg-readiness').value) {
-      shakeEl(form); return
-    }
+    const name      = form.querySelector('#reg-name').value.trim()
+    const region    = form.querySelector('#reg-region').value.trim()
+    const readiness = form.querySelector('#reg-readiness').value
+    if (!name || !region || !readiness) { shakeEl(form); return }
+
+    await fetch('/api/registrations', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name,
+        region,
+        readiness,
+        classification: form.querySelector('#reg-class').value || null,
+        dryness:        form.querySelector('#reg-dryness').value || null,
+        hours:          form.querySelector('#reg-hours').value || null,
+        statement:      form.querySelector('#reg-statement').value.trim() || null,
+      }),
+    })
+
     form.classList.add('hidden')
     success.classList.remove('hidden')
     if (refEl) refEl.textContent = Math.floor(100000 + Math.random() * 900000)
