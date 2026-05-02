@@ -293,7 +293,7 @@ function initRegisterForm() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name, email, region, readiness,
-        classification: form.querySelector('#reg-class').value || null,
+        classification: null,
         dryness:        form.querySelector('#reg-dryness').value || null,
         hours:          form.querySelector('#reg-hours').value || null,
         statement:      form.querySelector('#reg-statement').value.trim() || null,

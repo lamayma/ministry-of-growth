@@ -527,15 +527,8 @@ export default function Home() {
                     <label className="form-label" htmlFor="reg-region">Регион наблюдения <span className="required">*</span></label>
                     <input className="form-input" type="text" id="reg-region" name="region" placeholder="Город, район или номер комнаты" required />
                   </div>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="reg-class">Классификация наблюдателя</label>
-                    <select className="form-input form-select" id="reg-class" name="classification">
-                      <option value="">— Выберите классификацию —</option>
-                      <option value="casual">Рядовой наблюдатель</option>
-                      <option value="dedicated">Преданный монитор</option>
-                      <option value="senior">Старший ботанический дозорный</option>
-                      <option value="honorary">Почётный счётчик листьев</option>
-                    </select>
+                  <div style={{background:'rgba(74,222,128,0.05)', border:'1px solid rgba(74,222,128,0.15)', borderRadius:'6px', padding:'12px 14px', fontSize:'13px', color:'#7dd3b0', lineHeight:'1.6'}}>
+                    🌱 <strong>Все наблюдатели начинают с ранга «Рекрут».</strong> Классификация и звание присваиваются автоматически по результатам вашей деятельности — рапортам и полевым наблюдениям. Самостоятельный выбор ранга не предусмотрен протоколом.
                   </div>
                   <div className="form-group">
                     <label className="form-label" htmlFor="reg-readiness">Готовность к мониторингу листвы <span className="required">*</span></label>
