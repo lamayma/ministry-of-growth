@@ -53,8 +53,8 @@ function EntryScreen({ onSubmit }) {
 
   function handle(e) {
     e.preventDefault()
-    const num = val.trim().replace(/^OBS-/i, '')
-    if (!/^\d{6}$/.test(num)) { setErr('Введите 6-значный номер (OBS-XXXXXX)'); return }
+    const num = val.trim().replace(/^OBS-/i, '').toUpperCase()
+    if (num.length < 4) { setErr('Введите ваш номер наблюдателя (OBS-XXXX-XXXX)'); return }
     onSubmit(num)
   }
 
@@ -69,7 +69,7 @@ function EntryScreen({ onSubmit }) {
         <form onSubmit={handle}>
           <input
             style={{ ...S.input, marginBottom: 8, textAlign: 'center', fontSize: 18, letterSpacing: '0.1em', fontFamily: 'Space Mono, monospace' }}
-            placeholder="OBS-123456"
+            placeholder="OBS-XXXX-XXXX"
             value={val}
             onChange={e => { setVal(e.target.value); setErr('') }}
             autoFocus

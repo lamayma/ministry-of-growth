@@ -309,7 +309,8 @@ function initRegisterForm() {
       return
     }
 
-    const ref = data.ref_number || Math.floor(100000 + Math.random() * 900000)
+    const ref = data.ref_number
+    if (!ref) return
     localStorage.setItem('obs_ref', String(ref))
 
     form.classList.add('hidden')

@@ -12,7 +12,9 @@ export async function POST(request) {
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
   if (!emailOk) return Response.json({ error: 'Invalid email' }, { status: 400 })
 
-  const ref_number = String(Math.floor(100000 + Math.random() * 900000))
+  const CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
+  const rand = () => CHARS[Math.floor(Math.random() * CHARS.length)]
+  const ref_number = `${rand()}${rand()}${rand()}${rand()}-${rand()}${rand()}${rand()}${rand()}`
 
   const { error } = await supabase.from('registrations').insert({
     name, email, region, readiness, ref_number,
