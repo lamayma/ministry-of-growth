@@ -301,6 +301,14 @@ function initRegisterForm() {
     })
     const data = await res.json()
 
+    if (data.error === 'email_taken') {
+      const el = form.querySelector('#reg-email')
+      el.setCustomValidity('Этот email уже зарегистрирован. Каждый наблюдатель регистрируется только один раз.')
+      el.reportValidity()
+      el.setCustomValidity('')
+      return
+    }
+
     form.classList.add('hidden')
     success.classList.remove('hidden')
     if (refEl) refEl.textContent = data.ref_number || Math.floor(100000 + Math.random() * 900000)

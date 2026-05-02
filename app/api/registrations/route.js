@@ -22,7 +22,12 @@ export async function POST(request) {
     statement:      body.statement      || null,
   })
 
-  if (error) return Response.json({ error: error.message }, { status: 500 })
+  if (error) {
+    if (error.code === '23505') {
+      return Response.json({ error: 'email_taken' }, { status: 409 })
+    }
+    return Response.json({ error: error.message }, { status: 500 })
+  }
 
   await sendTelegram(
     `\u{1F9D1}‍\u{1F52C} <b>Новый наблюдатель</b>\n\n` +
