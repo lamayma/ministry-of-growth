@@ -20,14 +20,20 @@ export default function SubmitScripts() {
       const email    = document.getElementById('sub-email').value.trim()
       const region   = document.getElementById('sub-region').value.trim()
       const species  = document.getElementById('sub-species').value.trim()
-      const cond     = document.getElementById('sub-condition').value
-      const locDesc  = document.getElementById('sub-location-desc').value.trim()
-      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-      const photoUrl = document.getElementById('sub-photo-url').value.trim()
-      const photoUrlOk = !photoUrl || /^https?:\/\/.+/.test(photoUrl)
+      const cond         = document.getElementById('sub-condition').value
+      const locDesc      = document.getElementById('sub-location-desc').value.trim()
+      const workerStatus = document.getElementById('sub-worker-status').value
+      const emailOk      = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+      const photoUrl     = document.getElementById('sub-photo-url').value.trim()
+      const photoUrlOk   = !photoUrl || /^https?:\/\/.+/.test(photoUrl)
 
-      if (!name || !email || !region || !species || !cond || !locDesc || !emailOk || !photoUrlOk) {
-        if (!emailOk) {
+      if (!name || !email || !region || !species || !cond || !locDesc || !workerStatus || !emailOk || !photoUrlOk) {
+        if (!workerStatus) {
+          const el = document.getElementById('sub-worker-status')
+          el.setCustomValidity('Укажите статус работника')
+          el.reportValidity()
+          el.setCustomValidity('')
+        } else if (!emailOk) {
           const el = document.getElementById('sub-email')
           el.setCustomValidity('Введите корректный email (нужен символ @)')
           el.reportValidity()
@@ -54,13 +60,14 @@ export default function SubmitScripts() {
           species,
           condition:      cond,
           location_desc:  locDesc,
+          worker_status:  workerStatus,
           age:            document.getElementById('sub-age').value.trim() || null,
           category:       document.querySelector('input[name="category"]:checked')?.value || null,
-          photo_url:      document.getElementById('sub-photo-url').value.trim() || null,
+          photo_url:      photoUrl || null,
           description:    document.getElementById('sub-description').value.trim() || null,
           codename:       document.getElementById('sub-codename').value.trim() || null,
           priority:       document.getElementById('sub-priority').value || null,
-          observer_class: document.getElementById('sub-observer-class').value || null,
+          observer_class: null,
         }),
       })
 

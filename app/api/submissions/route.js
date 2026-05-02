@@ -3,9 +3,9 @@ import { sendTelegram } from '../../../lib/telegram'
 
 export async function POST(request) {
   const body = await request.json()
-  const { name, email, region, species, condition, location_desc } = body
+  const { name, email, region, species, condition, location_desc, worker_status } = body
 
-  if (!name || !email || !region || !species || !condition || !location_desc) {
+  if (!name || !email || !region || !species || !condition || !location_desc || !worker_status) {
     return Response.json({ error: 'Missing required fields' }, { status: 400 })
   }
 
@@ -32,8 +32,9 @@ export async function POST(request) {
     description:  body.description  || null,
     codename:     body.codename     || null,
     priority:     body.priority     || null,
+    worker_status,
     observer_class: body.observer_class || null,
-    status: 'pending',
+    status: 'new',
   })
 
   if (error) return Response.json({ error: error.message }, { status: 500 })
@@ -41,6 +42,7 @@ export async function POST(request) {
   await sendTelegram(
     `🪴 <b>Новая заявка на растение</b>\n\n` +
     `Наблюдатель: <b>${name}</b> (${email})\n` +
+    `Статус: ${worker_status}\n` +
     `Регион: ${region}\n` +
     `Вид: ${species}\n` +
     `Состояние: ${condition}\n` +

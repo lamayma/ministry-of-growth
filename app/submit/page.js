@@ -115,13 +115,16 @@ export default function SubmitPage() {
                     <input className="form-input" type="text" id="sub-region" name="region" placeholder="Город, район, этаж" required/>
                   </div>
                   <div className="form-group">
-                    <label className="form-label" htmlFor="sub-observer-class">Ваша текущая классификация</label>
-                    <select className="form-input form-select" id="sub-observer-class" name="observer_class">
-                      <option value="">— Не зарегистрирован —</option>
-                      <option value="casual">Рядовой наблюдатель</option>
-                      <option value="dedicated">Преданный монитор</option>
-                      <option value="senior">Старший ботанический дозорный</option>
-                      <option value="honorary">Почётный счётчик листьев</option>
+                    <label className="form-label" htmlFor="sub-worker-status">Статус работника <span className="required">*</span></label>
+                    <select className="form-input form-select" id="sub-worker-status" name="worker_status" required>
+                      <option value="">— Укажите статус —</option>
+                      <option value="staff">Штатный сотрудник</option>
+                      <option value="intern">Стажёр</option>
+                      <option value="contractor">Подрядчик</option>
+                      <option value="temporary">Временный сотрудник</option>
+                      <option value="remote">Удалённый наблюдатель</option>
+                      <option value="freelance">Внештатный агент</option>
+                      <option value="volunteer">Доброволец программы</option>
                     </select>
                   </div>
                 </div>

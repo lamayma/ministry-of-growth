@@ -212,12 +212,13 @@ export default function AdminPage() {
           rows={data.submissions}
           table="submissions"
           onStatusChange={updater('submissions')}
-          cols={['#', 'Дата', 'Имя', 'Email', 'Регион', 'Вид', 'Состояние', 'Место', 'Описание']}
+          cols={['#', 'Дата', 'Имя', 'Email', 'Статус работника', 'Регион', 'Вид', 'Состояние', 'Место', 'Описание']}
           renderRow={r => <>
             <Cell muted>{r.id}</Cell>
             <Cell muted>{fmt(r.created_at)}</Cell>
             <Cell>{r.name}</Cell>
             <Cell><MailLink email={r.email} /></Cell>
+            <Cell>{r.worker_status}</Cell>
             <Cell>{r.region}</Cell>
             <Cell>{r.species}</Cell>
             <Cell>{r.condition}</Cell>
