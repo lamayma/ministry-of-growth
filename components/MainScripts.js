@@ -282,27 +282,28 @@ function initRegisterForm() {
   form.addEventListener('submit', async e => {
     e.preventDefault()
     const name      = form.querySelector('#reg-name').value.trim()
+    const email     = form.querySelector('#reg-email').value.trim()
     const region    = form.querySelector('#reg-region').value.trim()
     const readiness = form.querySelector('#reg-readiness').value
-    if (!name || !region || !readiness) { shakeEl(form); return }
+    const emailOk   = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    if (!name || !email || !emailOk || !region || !readiness) { shakeEl(form); return }
 
-    await fetch('/api/registrations', {
+    const res = await fetch('/api/registrations', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name,
-        region,
-        readiness,
+        name, email, region, readiness,
         classification: form.querySelector('#reg-class').value || null,
         dryness:        form.querySelector('#reg-dryness').value || null,
         hours:          form.querySelector('#reg-hours').value || null,
         statement:      form.querySelector('#reg-statement').value.trim() || null,
       }),
     })
+    const data = await res.json()
 
     form.classList.add('hidden')
     success.classList.remove('hidden')
-    if (refEl) refEl.textContent = Math.floor(100000 + Math.random() * 900000)
+    if (refEl) refEl.textContent = data.ref_number || Math.floor(100000 + Math.random() * 900000)
   })
 }
 
@@ -315,16 +316,17 @@ function initReportForm() {
   if (dateInput) dateInput.value = new Date().toISOString().split('T')[0]
   form.addEventListener('submit', async e => {
     e.preventDefault()
-    const type     = form.querySelector('#inc-type').value
-    const desc     = form.querySelector('#inc-desc').value.trim()
-    const severity = form.querySelector('input[name="severity"]:checked')?.value
-    const date     = form.querySelector('#inc-date').value
-    if (!type || !desc || !severity) { shakeEl(form); return }
+    const observerRef = form.querySelector('#inc-observer').value.trim()
+    const type        = form.querySelector('#inc-type').value
+    const desc        = form.querySelector('#inc-desc').value.trim()
+    const severity    = form.querySelector('input[name="severity"]:checked')?.value
+    const date        = form.querySelector('#inc-date').value
+    if (!observerRef || !type || !desc || !severity) { shakeEl(form); return }
 
     await fetch('/api/reports', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ incident_type: type, incident_date: date, description: desc, severity }),
+      body: JSON.stringify({ observer_ref: observerRef, incident_type: type, incident_date: date, description: desc, severity }),
     })
 
     form.classList.add('hidden')

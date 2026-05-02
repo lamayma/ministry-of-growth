@@ -519,6 +519,10 @@ export default function Home() {
                     <input className="form-input" type="text" id="reg-name" name="name" placeholder="Как зарегистрировано у властей" required />
                   </div>
                   <div className="form-group">
+                    <label className="form-label" htmlFor="reg-email">Email для связи <span className="required">*</span></label>
+                    <input className="form-input" type="email" id="reg-email" name="email" placeholder="для официальных уведомлений" required />
+                  </div>
+                  <div className="form-group">
                     <label className="form-label" htmlFor="reg-region">Регион наблюдения <span className="required">*</span></label>
                     <input className="form-input" type="text" id="reg-region" name="region" placeholder="Город, район или номер комнаты" required />
                   </div>
@@ -602,6 +606,10 @@ export default function Home() {
                 <span className="mono small">Для всех уровней наблюдателей</span>
               </div>
               <form className="form form-horizontal" id="report-form" noValidate>
+                <div className="form-group">
+                  <label className="form-label" htmlFor="inc-observer">Номер наблюдателя <span className="required">*</span></label>
+                  <input className="form-input" type="text" id="inc-observer" name="observer_ref" placeholder="OBS-XXXXXX — выдаётся при регистрации" required />
+                </div>
                 <div className="form-row">
                   <div className="form-group">
                     <label className="form-label" htmlFor="inc-type">Тип инцидента <span className="required">*</span></label>
