@@ -571,9 +571,20 @@ export default function Home() {
                 </form>
                 <div className="form-success hidden" id="register-success">
                   <div className="success-icon">✓</div>
-                  <div className="success-title mono">Регистрация принята к рассмотрению</div>
-                  <p>Ваше заявление подано и будет обработано в течение 30 рабочих дней. Подтверждение по электронной почте не предусмотрено. Ваше имя добавлено в неофициальный реестр.</p>
-                  <span className="mono small">Reference: OBS-<span id="success-ref">000000</span></span>
+                  <div className="success-title mono">Регистрация принята</div>
+                  <p>Вам присвоен персональный номер наблюдателя. Используйте его для подачи рапортов и входа в личный кабинет.</p>
+                  <div style={{margin:'20px 0', padding:'20px', background:'rgba(74,222,128,0.06)', border:'2px solid rgba(74,222,128,0.3)', borderRadius:'8px', textAlign:'center'}}>
+                    <div style={{fontSize:'11px', letterSpacing:'0.15em', color:'#4a5550', marginBottom:'10px', textTransform:'uppercase'}}>Ваш номер наблюдателя</div>
+                    <div style={{fontSize:'38px', fontWeight:'700', letterSpacing:'0.1em', fontFamily:'Space Mono, monospace', color:'#4ade80', lineHeight:1}}>OBS-<span id="success-ref">000000</span></div>
+                    <div style={{marginTop:'10px', fontSize:'12px', color:'#7dd3b0', fontFamily:'Space Mono, monospace'}}>Уровень допуска: УРОВЕНЬ-0 / Ранг: Рекрут</div>
+                  </div>
+                  <div style={{background:'rgba(248,113,113,0.08)', border:'1px solid rgba(248,113,113,0.25)', borderRadius:'6px', padding:'14px 16px', marginTop:'4px'}}>
+                    <div style={{fontSize:'12px', fontWeight:'600', color:'#f87171', marginBottom:'6px', letterSpacing:'0.05em'}}>⚠ ВНИМАНИЕ — ПРОЧИТАЙТЕ ВНИМАТЕЛЬНО</div>
+                    <div style={{fontSize:'13px', color:'#c8a0a0', lineHeight:'1.6'}}>
+                      Этот номер выдаётся <strong>один раз</strong> и нигде не сохраняется повторно. Подтверждение на email не предусмотрено. Восстановление номера невозможно.<br/>
+                      <strong>Запишите его прямо сейчас</strong> — в заметки, на бумагу или сфотографируйте экран.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
