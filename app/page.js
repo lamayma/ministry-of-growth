@@ -33,6 +33,7 @@ export default function Home() {
               <a href="#dashboard">Данные</a>
               <a href="#archive">Архив</a>
               <a href="#register" className="nav-cta">Регистрация</a>
+              <a href="/cabinet" className="nav-cta">Кабинет</a>
               <a href="/submit" className="nav-cta nav-cta--gold">Подать объект</a>
             </nav>
           </div>
