@@ -578,6 +578,12 @@ export default function Home() {
                       <strong>Запишите его прямо сейчас</strong> — в заметки, на бумагу или сфотографируйте экран.
                     </div>
                   </div>
+                  <div style={{marginTop:'16px', textAlign:'center'}}>
+                    <p style={{fontSize:'12px', color:'#4a5550', margin:'0 0 10px'}}>Переход в кабинет через <strong id="reg-countdown">5</strong> сек…</p>
+                    <a id="reg-cabinet-btn" href="/cabinet" style={{display:'inline-block', background:'#1e3a28', border:'1px solid #2d5038', color:'#4ade80', borderRadius:'6px', padding:'10px 28px', fontSize:'14px', fontWeight:'600', textDecoration:'none', letterSpacing:'0.02em'}}>
+                      Войти в личный кабинет →
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

@@ -309,9 +309,21 @@ function initRegisterForm() {
       return
     }
 
+    const ref = data.ref_number || Math.floor(100000 + Math.random() * 900000)
+    localStorage.setItem('obs_ref', String(ref))
+
     form.classList.add('hidden')
     success.classList.remove('hidden')
-    if (refEl) refEl.textContent = data.ref_number || Math.floor(100000 + Math.random() * 900000)
+    if (refEl) refEl.textContent = ref
+
+    // countdown → auto-redirect to cabinet
+    let sec = 5
+    const countdownEl = document.getElementById('reg-countdown')
+    const iv = setInterval(() => {
+      sec--
+      if (countdownEl) countdownEl.textContent = sec
+      if (sec <= 0) { clearInterval(iv); window.location.href = '/cabinet' }
+    }, 1000)
   })
 }
 
